@@ -179,7 +179,8 @@ function NotFound() {
 }
 
 function CaseStudyPage() {
-  const { study: s } = Route.useLoaderData();
+  const data = Route.useLoaderData() as { study: CaseStudy };
+  const s = data.study;
   const others = Object.values(studies).filter((x) => x.slug !== s.slug);
 
   return (
@@ -369,7 +370,7 @@ function CaseStudyPage() {
               </Link>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-              {others.map((o: CaseStudy) => (
+              {others.map((o) => (
                 <Link
                   key={o.slug}
                   to="/work/$slug"
