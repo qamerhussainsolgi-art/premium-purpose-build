@@ -10,6 +10,7 @@ import projectAgency from "@/assets/project-agency.jpg";
 
 const caseStudies = [
   {
+    slug: "flowstate",
     image: projectSaaS,
     name: "FlowState",
     industry: "SaaS · Productivity",
@@ -18,6 +19,7 @@ const caseStudies = [
     outcome: "+38% trial activation, -52% bounce on landing.",
   },
   {
+    slug: "finedge-capital",
     image: projectFinance,
     name: "FinEdge Capital",
     industry: "Financial Services",
@@ -26,6 +28,7 @@ const caseStudies = [
     outcome: "+64% qualified leads, 2.1× consultation bookings.",
   },
   {
+    slug: "studio-meridian",
     image: projectAgency,
     name: "Studio Meridian",
     industry: "Creative Agency",
@@ -107,10 +110,11 @@ function WorkPage() {
                     </div>
                   </dl>
                   <Link
-                    to="/contact"
+                    to="/work/$slug"
+                    params={{ slug: p.slug }}
                     className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-all duration-300 hover:border-foreground/20 hover:bg-surface-elevated"
                   >
-                    Discuss a similar project
+                    Read the case study
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </Link>
                 </div>
