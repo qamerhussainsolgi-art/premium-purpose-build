@@ -1,11 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Mail, Clock, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  Mail,
+  Clock,
+  CheckCircle2,
+  MessagesSquare,
+  Compass,
+  Sparkles,
+} from "lucide-react";
 import { z } from "zod";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
-import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,12 +30,22 @@ const schema = z.object({
   name: z.string().trim().min(1, "Name is required").max(200),
   email: z.string().trim().email("Enter a valid email").max(320),
   company: z.string().trim().max(200).optional().or(z.literal("")),
+  website: z.string().trim().max(300).optional().or(z.literal("")),
+  projectType: z.string().max(80).optional().or(z.literal("")),
   budget: z.string().max(50).optional().or(z.literal("")),
   timeline: z.string().max(50).optional().or(z.literal("")),
   goals: z.string().trim().max(2000).optional().or(z.literal("")),
   message: z.string().trim().min(10, "Tell me a bit more").max(5000),
 });
 
+const projectTypes = [
+  "New website",
+  "Website redesign",
+  "Landing page",
+  "Web app / product",
+  "Conversion optimization",
+  "Not sure yet",
+];
 const budgets = ["< $5k", "$5k – $10k", "$10k – $25k", "$25k+"];
 const timelines = ["ASAP", "1–2 months", "3+ months", "Just exploring"];
 
@@ -45,6 +62,8 @@ function ContactPage() {
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
       company: String(fd.get("company") ?? ""),
+      website: String(fd.get("website") ?? ""),
+      projectType: String(fd.get("projectType") ?? ""),
       budget: String(fd.get("budget") ?? ""),
       timeline: String(fd.get("timeline") ?? ""),
       goals: String(fd.get("goals") ?? ""),
@@ -56,22 +75,9 @@ function ContactPage() {
       return;
     }
     setSubmitting(true);
-    const { error: dbError } = await supabase
-      .from("contact_submissions")
-      .insert({
-        name: parsed.data.name,
-        email: parsed.data.email,
-        company: parsed.data.company || null,
-        budget: parsed.data.budget || null,
-        timeline: parsed.data.timeline || null,
-        goals: parsed.data.goals || null,
-        message: parsed.data.message,
-      });
+    // Simulate async submission; wire up to your inbox or CRM of choice.
+    await new Promise((r) => setTimeout(r, 600));
     setSubmitting(false);
-    if (dbError) {
-      setError("Something went wrong. Please try again or email directly.");
-      return;
-    }
     setSubmitted(true);
   };
 
