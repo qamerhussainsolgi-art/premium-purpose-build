@@ -101,24 +101,47 @@ function ContactPage() {
         <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
             {/* Sidebar */}
-            <aside className="space-y-8">
+            <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
               <div>
-                <h2 className="text-xl font-semibold tracking-[-0.01em] text-foreground">
-                  What to expect
+                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  Working Together
+                </span>
+                <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
+                  What working with me looks like.
                 </h2>
-                <ul className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                  <li className="flex gap-3">
-                    <Clock className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
-                    Personal response within 24 hours.
-                  </li>
-                  <li className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
-                    A short discovery call to align on goals.
-                  </li>
-                  <li className="flex gap-3">
-                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
-                    A clear proposal with scope, timeline, and pricing.
-                  </li>
+                <ul className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground">
+                  {[
+                    {
+                      icon: Clock,
+                      title: "Response within 24 hours",
+                      desc: "Every inquiry gets a personal reply — never an automated reply.",
+                    },
+                    {
+                      icon: MessagesSquare,
+                      title: "Transparent communication",
+                      desc: "Direct updates, clear timelines, honest expectations from day one.",
+                    },
+                    {
+                      icon: Compass,
+                      title: "Collaborative process",
+                      desc: "Strategy, design, and development built around your business — not a template.",
+                    },
+                    {
+                      icon: Sparkles,
+                      title: "Long-term quality focus",
+                      desc: "Websites built to last — fast, scalable, and easy to grow with you.",
+                    },
+                  ].map((item) => (
+                    <li key={item.title} className="flex gap-4">
+                      <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface/60">
+                        <item.icon className="h-3.5 w-3.5 text-foreground" />
+                      </span>
+                      <div>
+                        <p className="text-foreground">{item.title}</p>
+                        <p className="mt-1 text-muted-foreground">{item.desc}</p>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -158,11 +181,12 @@ function ContactPage() {
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <Field label="Your name" name="name" required />
                     <Field label="Email" name="email" type="email" required />
-                    <Field label="Company" name="company" />
-                    <Field label="Website (optional)" name="goals_placeholder" disabled placeholderText="—" />
+                    <Field label="Business name" name="company" />
+                    <Field label="Website" name="website" placeholderText="https://" />
                   </div>
 
-                  <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
+                    <SelectField label="Project type" name="projectType" options={projectTypes} />
                     <SelectField label="Budget range" name="budget" options={budgets} />
                     <SelectField label="Timeline" name="timeline" options={timelines} />
                   </div>
