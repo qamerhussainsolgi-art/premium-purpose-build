@@ -369,7 +369,7 @@ function CaseStudyPage() {
               </Link>
             </div>
             <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
-              {others.map((o) => (
+              {others.map((o: CaseStudy) => (
                 <Link
                   key={o.slug}
                   to="/work/$slug"
