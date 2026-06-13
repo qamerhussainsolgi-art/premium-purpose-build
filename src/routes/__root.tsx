@@ -77,19 +77,53 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Qamer Hussain — Website Designer & Developer" },
+      {
+        name: "description",
+        content:
+          "Premium, conversion-focused websites for startups, SaaS, and e-commerce. Strategy, design, and development by Qamer Hussain.",
+      },
+      { name: "author", content: "Qamer Hussain" },
+      { name: "theme-color", content: "#1a1a24" },
+      { property: "og:site_name", content: "Qamer Hussain" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:title", content: "Qamer Hussain — Website Designer & Developer" },
+      {
+        property: "og:description",
+        content:
+          "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
+      },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Qamer Hussain — Website Designer & Developer" },
+      {
+        name: "twitter:description",
+        content: "Premium, conversion-focused websites that build trust and drive growth.",
+      },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Qamer Hussain",
+          jobTitle: "Website Designer & Developer",
+          url: "/",
+          sameAs: [],
+          knowsAbout: [
+            "Web Design",
+            "Web Development",
+            "Conversion Optimization",
+            "UX Design",
+            "Performance Optimization",
+          ],
+        }),
       },
     ],
   }),
