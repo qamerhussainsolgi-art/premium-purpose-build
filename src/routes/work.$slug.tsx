@@ -416,9 +416,124 @@ function CaseStudyPage() {
           </div>
         </section>
 
+        {/* Before / After */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+            <div className="max-w-2xl">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Before / After
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
+                The shift, side by side.
+              </h2>
+            </div>
+            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+              <div className="rounded-2xl border border-border bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  Before
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {s.before.map((b) => (
+                    <li key={b} className="flex items-start gap-3 text-sm text-foreground/75 sm:text-[15px]">
+                      <span className="mt-2 h-1 w-3 rounded-full bg-muted-foreground/50" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative rounded-2xl border border-foreground/15 bg-card/80 p-8 backdrop-blur-sm sm:p-10">
+                <div className="pointer-events-none absolute -top-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-foreground/40 to-transparent" />
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/80">
+                  After
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {s.after.map((a) => (
+                    <li key={a} className="flex items-start gap-3 text-sm text-foreground sm:text-[15px]">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Learnings */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+            <div className="max-w-2xl">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Key learnings
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
+                What the project taught us.
+              </h2>
+            </div>
+            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+              {s.learnings.map((l, i) => (
+                <div
+                  key={l.title}
+                  className="rounded-2xl border border-border bg-card/60 p-7 backdrop-blur-sm sm:p-8"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-8 w-8 place-items-center rounded-full border border-border bg-surface text-foreground">
+                      <Lightbulb className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold tracking-[-0.01em] text-foreground">
+                    {l.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">
+                    {l.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Highlights + Results summary */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:py-32">
+            <div>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Technical highlights
+              </span>
+              <h2 className="mt-4 text-[2rem] font-semibold leading-[1.1] tracking-[-0.03em] text-foreground sm:text-4xl">
+                Built to last.
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
+                A modern stack chosen for resilience, performance, and a team that can keep shipping long after launch.
+              </p>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {s.techStack.map((t) => (
+                  <li
+                    key={t}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-3.5 py-1.5 text-xs font-medium text-foreground/85"
+                  >
+                    <Wrench className="h-3 w-3 text-muted-foreground" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm sm:p-12">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Results summary
+              </span>
+              <p className="mt-6 font-display text-2xl leading-[1.35] tracking-[-0.01em] text-foreground sm:text-[1.8rem]">
+                "{s.resultsSummary}"
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Gallery — magazine layout */}
         <section className="relative border-t border-border">
-          {/* placeholder to keep diff stable */}
           <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
             <div className="max-w-xl">
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
