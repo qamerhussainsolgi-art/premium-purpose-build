@@ -418,6 +418,7 @@ function CaseStudyPage() {
 
         {/* Gallery — magazine layout */}
         <section className="relative border-t border-border">
+          {/* placeholder to keep diff stable */}
           <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
             <div className="max-w-xl">
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
