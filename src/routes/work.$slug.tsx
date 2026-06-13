@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Lightbulb, Wrench, Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -19,6 +19,11 @@ type CaseStudy = {
   outcomes: { value: string; label: string }[];
   gallery: { src: string; caption: string; tall?: boolean }[];
   meta: { role: string; timeline: string; year: string };
+  before: string[];
+  after: string[];
+  learnings: { title: string; body: string }[];
+  techStack: string[];
+  resultsSummary: string;
 };
 
 const studies: Record<string, CaseStudy> = {
@@ -55,6 +60,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectAgency, caption: "Pricing structured around outcomes, not features." },
     ],
     meta: { role: "Design & Development", timeline: "5 weeks", year: "2025" },
+    before: [
+      "Confused, multi-message hero",
+      "Seven-step onboarding",
+      "Mobile LCP over 4 seconds",
+      "Trial-to-paid below 5%",
+    ],
+    after: [
+      "Single-promise hero in ten seconds",
+      "Three-step guided activation",
+      "Mobile LCP at 1.9 seconds",
+      "Trial-to-paid above 11%",
+    ],
+    learnings: [
+      {
+        title: "Onboarding length isn't the problem",
+        body: "Cutting steps didn't lift activation — clarifying the next action did. Steps are cheap; ambiguity is expensive.",
+      },
+      {
+        title: "Pricing is positioning",
+        body: "Restructuring tiers around outcomes (not seats or features) closed the gap between curious visitors and paying users.",
+      },
+      {
+        title: "Perf compounds with trust",
+        body: "Faster pages didn't just help SEO — they made every other improvement feel more credible.",
+      },
+    ],
+    techStack: ["React", "TanStack Start", "Tailwind v4", "Edge SSR", "Cloudflare"],
+    resultsSummary:
+      "A clearer story, a guided activation, and a measurably faster surface — together moving trial activation up 38% and signup-to-paid up 27% in the first quarter post-launch.",
   },
   "finedge-capital": {
     slug: "finedge-capital",
@@ -89,6 +123,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectSaaS, caption: "Inquiry flow that qualifies, not just collects." },
     ],
     meta: { role: "Strategy, Design & Build", timeline: "6 weeks", year: "2025" },
+    before: [
+      "Directory-style homepage",
+      "Generic inquiry form",
+      "Inconsistent partner inbound",
+      "Hours spent qualifying weekly",
+    ],
+    after: [
+      "Editorial, trust-led homepage",
+      "Qualifying inquiry path",
+      "Decision-maker inbound",
+      "Time to qualify down 41%",
+    ],
+    learnings: [
+      {
+        title: "The site IS the first meeting",
+        body: "Sophisticated buyers decide before they call. The bar for tone, evidence, and restraint is set by their other advisors — not other websites.",
+      },
+      {
+        title: "Qualification is a feature",
+        body: "Asking better questions up front isn't friction — it's a signal of seriousness that the right clients respect.",
+      },
+      {
+        title: "Quiet design reads as confidence",
+        body: "Restraint, whitespace, and a slower pace did more for credibility than any badge or testimonial ever could.",
+      },
+    ],
+    techStack: ["React", "Headless CMS", "Edge Rendering", "TypeScript", "Sanity"],
+    resultsSummary:
+      "A repositioned, evidence-led website that turned a noisy inbound channel into a qualified pipeline — lifting qualified leads 64% and doubling booked consultations.",
   },
   "studio-meridian": {
     slug: "studio-meridian",
@@ -123,6 +186,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectFinance, caption: "Quiet navigation, designed to disappear." },
     ],
     meta: { role: "Design & Development", timeline: "7 weeks", year: "2024" },
+    before: [
+      "Thumbnail-grid portfolio",
+      "Hidden process and rationale",
+      "Inconsistent inbound quality",
+      "Heavy, slow image loads",
+    ],
+    after: [
+      "Chapter-led project narratives",
+      "Visible thinking and craft",
+      "Aligned, premium inbound",
+      "Snappy, adaptive imagery",
+    ],
+    learnings: [
+      {
+        title: "Show the thinking, not just the output",
+        body: "Clients hired the studio after reading process — not after browsing thumbnails. Narrative converted where grids didn't.",
+      },
+      {
+        title: "A portfolio is a positioning tool",
+        body: "Selecting fewer, better-told projects out-performed showing everything. Editing is a form of expertise.",
+      },
+      {
+        title: "Performance is part of the aesthetic",
+        body: "Heavy imagery doesn't have to feel heavy. Adaptive formats and route-level preloading kept the premium feel intact.",
+      },
+    ],
+    techStack: ["React", "TanStack Router", "Sanity CMS", "Image CDN", "Motion"],
+    resultsSummary:
+      "An editorial, project-first portfolio that finally matches the caliber of the work — tripling inbound inquiries and lifting case study reads 44%.",
   },
 };
 
@@ -320,6 +412,122 @@ function CaseStudyPage() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Before / After */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+            <div className="max-w-2xl">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Before / After
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
+                The shift, side by side.
+              </h2>
+            </div>
+            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+              <div className="rounded-2xl border border-border bg-card/40 p-8 backdrop-blur-sm sm:p-10">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                  Before
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {s.before.map((b) => (
+                    <li key={b} className="flex items-start gap-3 text-sm text-foreground/75 sm:text-[15px]">
+                      <span className="mt-2 h-1 w-3 rounded-full bg-muted-foreground/50" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative rounded-2xl border border-foreground/15 bg-card/80 p-8 backdrop-blur-sm sm:p-10">
+                <div className="pointer-events-none absolute -top-px left-1/2 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-foreground/40 to-transparent" />
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/80">
+                  After
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {s.after.map((a) => (
+                    <li key={a} className="flex items-start gap-3 text-sm text-foreground sm:text-[15px]">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
+                      <span>{a}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Learnings */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:py-32">
+            <div className="max-w-2xl">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Key learnings
+              </span>
+              <h2 className="mt-4 text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
+                What the project taught us.
+              </h2>
+            </div>
+            <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+              {s.learnings.map((l, i) => (
+                <div
+                  key={l.title}
+                  className="rounded-2xl border border-border bg-card/60 p-7 backdrop-blur-sm sm:p-8"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-8 w-8 place-items-center rounded-full border border-border bg-surface text-foreground">
+                      <Lightbulb className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold tracking-[-0.01em] text-foreground">
+                    {l.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-[1.75] text-muted-foreground">
+                    {l.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technical Highlights + Results summary */}
+        <section className="relative border-t border-border">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-24 lg:grid-cols-[1fr_1.2fr] lg:gap-20 lg:py-32">
+            <div>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Technical highlights
+              </span>
+              <h2 className="mt-4 text-[2rem] font-semibold leading-[1.1] tracking-[-0.03em] text-foreground sm:text-4xl">
+                Built to last.
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
+                A modern stack chosen for resilience, performance, and a team that can keep shipping long after launch.
+              </p>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {s.techStack.map((t) => (
+                  <li
+                    key={t}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-3.5 py-1.5 text-xs font-medium text-foreground/85"
+                  >
+                    <Wrench className="h-3 w-3 text-muted-foreground" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm sm:p-12">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Results summary
+              </span>
+              <p className="mt-6 font-display text-2xl leading-[1.35] tracking-[-0.01em] text-foreground sm:text-[1.8rem]">
+                "{s.resultsSummary}"
+              </p>
             </div>
           </div>
         </section>
