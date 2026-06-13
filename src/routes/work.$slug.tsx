@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Lightbulb, Wrench, Check } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -19,6 +19,11 @@ type CaseStudy = {
   outcomes: { value: string; label: string }[];
   gallery: { src: string; caption: string; tall?: boolean }[];
   meta: { role: string; timeline: string; year: string };
+  before: string[];
+  after: string[];
+  learnings: { title: string; body: string }[];
+  techStack: string[];
+  resultsSummary: string;
 };
 
 const studies: Record<string, CaseStudy> = {
@@ -55,6 +60,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectAgency, caption: "Pricing structured around outcomes, not features." },
     ],
     meta: { role: "Design & Development", timeline: "5 weeks", year: "2025" },
+    before: [
+      "Confused, multi-message hero",
+      "Seven-step onboarding",
+      "Mobile LCP over 4 seconds",
+      "Trial-to-paid below 5%",
+    ],
+    after: [
+      "Single-promise hero in ten seconds",
+      "Three-step guided activation",
+      "Mobile LCP at 1.9 seconds",
+      "Trial-to-paid above 11%",
+    ],
+    learnings: [
+      {
+        title: "Onboarding length isn't the problem",
+        body: "Cutting steps didn't lift activation — clarifying the next action did. Steps are cheap; ambiguity is expensive.",
+      },
+      {
+        title: "Pricing is positioning",
+        body: "Restructuring tiers around outcomes (not seats or features) closed the gap between curious visitors and paying users.",
+      },
+      {
+        title: "Perf compounds with trust",
+        body: "Faster pages didn't just help SEO — they made every other improvement feel more credible.",
+      },
+    ],
+    techStack: ["React", "TanStack Start", "Tailwind v4", "Edge SSR", "Cloudflare"],
+    resultsSummary:
+      "A clearer story, a guided activation, and a measurably faster surface — together moving trial activation up 38% and signup-to-paid up 27% in the first quarter post-launch.",
   },
   "finedge-capital": {
     slug: "finedge-capital",
@@ -89,6 +123,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectSaaS, caption: "Inquiry flow that qualifies, not just collects." },
     ],
     meta: { role: "Strategy, Design & Build", timeline: "6 weeks", year: "2025" },
+    before: [
+      "Directory-style homepage",
+      "Generic inquiry form",
+      "Inconsistent partner inbound",
+      "Hours spent qualifying weekly",
+    ],
+    after: [
+      "Editorial, trust-led homepage",
+      "Qualifying inquiry path",
+      "Decision-maker inbound",
+      "Time to qualify down 41%",
+    ],
+    learnings: [
+      {
+        title: "The site IS the first meeting",
+        body: "Sophisticated buyers decide before they call. The bar for tone, evidence, and restraint is set by their other advisors — not other websites.",
+      },
+      {
+        title: "Qualification is a feature",
+        body: "Asking better questions up front isn't friction — it's a signal of seriousness that the right clients respect.",
+      },
+      {
+        title: "Quiet design reads as confidence",
+        body: "Restraint, whitespace, and a slower pace did more for credibility than any badge or testimonial ever could.",
+      },
+    ],
+    techStack: ["React", "Headless CMS", "Edge Rendering", "TypeScript", "Sanity"],
+    resultsSummary:
+      "A repositioned, evidence-led website that turned a noisy inbound channel into a qualified pipeline — lifting qualified leads 64% and doubling booked consultations.",
   },
   "studio-meridian": {
     slug: "studio-meridian",
@@ -123,6 +186,35 @@ const studies: Record<string, CaseStudy> = {
       { src: projectFinance, caption: "Quiet navigation, designed to disappear." },
     ],
     meta: { role: "Design & Development", timeline: "7 weeks", year: "2024" },
+    before: [
+      "Thumbnail-grid portfolio",
+      "Hidden process and rationale",
+      "Inconsistent inbound quality",
+      "Heavy, slow image loads",
+    ],
+    after: [
+      "Chapter-led project narratives",
+      "Visible thinking and craft",
+      "Aligned, premium inbound",
+      "Snappy, adaptive imagery",
+    ],
+    learnings: [
+      {
+        title: "Show the thinking, not just the output",
+        body: "Clients hired the studio after reading process — not after browsing thumbnails. Narrative converted where grids didn't.",
+      },
+      {
+        title: "A portfolio is a positioning tool",
+        body: "Selecting fewer, better-told projects out-performed showing everything. Editing is a form of expertise.",
+      },
+      {
+        title: "Performance is part of the aesthetic",
+        body: "Heavy imagery doesn't have to feel heavy. Adaptive formats and route-level preloading kept the premium feel intact.",
+      },
+    ],
+    techStack: ["React", "TanStack Router", "Sanity CMS", "Image CDN", "Motion"],
+    resultsSummary:
+      "An editorial, project-first portfolio that finally matches the caliber of the work — tripling inbound inquiries and lifting case study reads 44%.",
   },
 };
 
