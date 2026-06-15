@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Clock } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { ChevronDown, Clock } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
@@ -12,78 +13,67 @@ type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Web Design" | "Development" | "UX" | "Performance" | "Business";
+  category: "Web Design" | "Small Business" | "UX" | "Trust" | "Business";
   readTime: string;
   date: string;
   cover: string;
+  body: string[];
   feature?: boolean;
 };
 
 const articles: Article[] = [
   {
-    slug: "ten-seconds-that-decide",
-    title: "The ten seconds that decide your conversion rate",
+    slug: "website-vs-social-media",
+    title: "Why your business needs a website even if you're active on social media",
     excerpt:
-      "Most visitors form a judgement before they ever scroll. Here's how to design a hero that earns the next ten seconds — and the ones after that.",
-    category: "Web Design",
-    readTime: "6 min read",
-    date: "May 28, 2026",
+      "Social pages help people find you. A website is what convinces them to trust you. Here's why both matter — and why a website does work social can't.",
+    category: "Small Business",
+    readTime: "4 min read",
+    date: "Recently published",
     cover: projectSaaS,
     feature: true,
+    body: [
+      "Most small businesses in Pakistan get their first customers through Instagram, Facebook, or WhatsApp. That's a great start — but a social profile is rented space. The algorithm decides who sees your posts, your old content disappears, and serious buyers often hesitate to take a business seriously when there's no website behind the brand.",
+      "A website is your owned home on the internet. It works 24/7, ranks on Google, and gives potential customers one professional place to see your products, your story, and how to contact you. It's the difference between handing someone a printed catalog and showing them a folder of screenshots.",
+      "If you sell to other businesses — wholesalers, distributors, B2B buyers — a website is almost non-negotiable. Buyers Google you before they reply. If they can't find a clean, professional site, you've lost trust before the conversation even starts.",
+      "You don't need a huge website to begin. A simple, well-designed one-pager with your offer, a few photos, contact details, and a WhatsApp button is enough to look serious — and to start winning the customers your social accounts can't.",
+    ],
   },
   {
-    slug: "why-most-redesigns-fail",
-    title: "Why most website redesigns fail before they ship",
+    slug: "what-makes-a-website-trustworthy",
+    title: "What makes a website trustworthy to customers",
     excerpt:
-      "Redesigns rarely fail in design or code. They fail in scoping. A short guide to setting up a redesign that actually moves the business.",
-    category: "Business",
-    readTime: "8 min read",
-    date: "May 14, 2026",
-    cover: projectFinance,
-  },
-  {
-    slug: "performance-as-a-design-decision",
-    title: "Performance is a design decision, not a development one",
-    excerpt:
-      "Speed isn't a metric you optimise at the end. It's a constraint you design under — and the difference shows up everywhere.",
-    category: "Performance",
-    readTime: "5 min read",
-    date: "Apr 30, 2026",
-    cover: projectAgency,
-  },
-  {
-    slug: "designing-trust-into-ux",
-    title: "Designing trust into every interaction",
-    excerpt:
-      "Trust isn't a badge or a testimonial — it's the cumulative effect of a hundred small decisions made in the user's favour.",
-    category: "UX",
-    readTime: "7 min read",
-    date: "Apr 12, 2026",
-    cover: projectFinance,
-  },
-  {
-    slug: "ship-less-ship-better",
-    title: "Ship less. Ship better.",
-    excerpt:
-      "On the discipline of removing features to make the remaining ones unmistakable — and why restraint reads as confidence.",
-    category: "Development",
+      "Trust isn't built by fancy animations. It's built by clarity, honesty, and small details that signal you're a real business that cares.",
+    category: "Trust",
     readTime: "4 min read",
-    date: "Mar 27, 2026",
-    cover: projectSaaS,
+    date: "Recently published",
+    cover: projectFinance,
+    body: [
+      "When someone lands on your website, they make a decision in seconds: does this feel like a real business, or not? That decision rarely comes from your logo or your colors. It comes from small signals working together.",
+      "Clear messaging is the first one. If a visitor can't tell what you do and who you do it for in the first ten seconds, they leave. A trustworthy site says one thing well, instead of trying to say everything at once.",
+      "Real contact information matters more than people realise. A phone number, a WhatsApp button, a business address, an email that matches your domain — these tiny details tell visitors you have nothing to hide. A generic Gmail address with no phone number quietly does the opposite.",
+      "Quality of presentation is the third pillar. Sharp photos, proper spacing, no broken links, fast loading. You don't need to be flashy — you need to look cared for. A neglected website tells visitors you might neglect them too.",
+    ],
   },
   {
-    slug: "writing-for-the-web",
-    title: "How writing well makes everything else easier",
+    slug: "common-first-website-mistakes",
+    title: "Common mistakes small businesses make with their first website",
     excerpt:
-      "Clear copy fixes interface problems you didn't know you had. A short essay on writing as the first design tool.",
-    category: "UX",
+      "Most first websites underperform for the same handful of reasons. Avoid these and you'll already be ahead of most competitors.",
+    category: "Small Business",
     readTime: "5 min read",
-    date: "Mar 9, 2026",
+    date: "Recently published",
     cover: projectAgency,
+    body: [
+      "The most common mistake is trying to say everything at once. Owners feel they have to list every product, every service, every detail on the homepage. The result is a wall of text no one reads. A good homepage focuses on one message: who you help, what you do for them, and why they should care.",
+      "The second mistake is ignoring mobile. In Pakistan, the majority of your visitors are on a phone. If your site is hard to read or tap on a small screen, you're losing most of your traffic — no matter how nice it looks on a laptop.",
+      "The third is no clear next step. Every page should make it obvious what the visitor should do next: message you on WhatsApp, request a quote, view the catalog, call. If you make people guess, they leave.",
+      "Finally, treating the website as a one-time project. A website is not a brochure — it's a living asset. Update your products, fix what's broken, refresh photos, and improve the parts that aren't working. Small, consistent improvements compound into a site that genuinely grows the business.",
+    ],
   },
 ];
 
-const categories = ["All", "Web Design", "Development", "UX", "Performance", "Business"] as const;
+const categories = ["All", "Small Business", "Trust", "Web Design"] as const;
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -108,6 +98,9 @@ export const Route = createFileRoute("/insights")({
 function InsightsPage() {
   const feature = articles.find((a) => a.feature) ?? articles[0];
   const rest = articles.filter((a) => a.slug !== feature.slug);
+  const [openSlugs, setOpenSlugs] = useState<Record<string, boolean>>({});
+  const toggle = (slug: string) =>
+    setOpenSlugs((s) => ({ ...s, [slug]: !s[slug] }));
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -177,13 +170,26 @@ function InsightsPage() {
                 </span>
               </div>
               <div className="mt-10">
-                <Link
-                  to="/contact"
+                <button
+                  type="button"
+                  onClick={() => toggle(feature.slug)}
+                  aria-expanded={!!openSlugs[feature.slug]}
                   className="group/link inline-flex items-center gap-2 text-sm font-medium text-foreground"
                 >
-                  Read article
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-                </Link>
+                  {openSlugs[feature.slug] ? "Hide article" : "Read article"}
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 ${
+                      openSlugs[feature.slug] ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {openSlugs[feature.slug] && (
+                  <div className="mt-8 max-w-2xl space-y-5 border-t border-border pt-8 text-[15px] leading-[1.8] text-muted-foreground">
+                    {feature.body.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </article>
@@ -191,7 +197,7 @@ function InsightsPage() {
 
         {/* Article grid */}
         <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:gap-12">
             {rest.map((a) => (
               <article key={a.slug} className="group flex flex-col">
                 <div className="overflow-hidden rounded-2xl border border-border bg-card/60">
@@ -218,8 +224,27 @@ function InsightsPage() {
                 </p>
                 <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
                   <span>{a.date}</span>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                  <button
+                    type="button"
+                    onClick={() => toggle(a.slug)}
+                    aria-expanded={!!openSlugs[a.slug]}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-foreground/70"
+                  >
+                    {openSlugs[a.slug] ? "Hide" : "Read article"}
+                    <ChevronDown
+                      className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                        openSlugs[a.slug] ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
                 </div>
+                {openSlugs[a.slug] && (
+                  <div className="mt-6 space-y-4 border-t border-border pt-6 text-sm leading-[1.8] text-muted-foreground">
+                    {a.body.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                )}
               </article>
             ))}
           </div>
