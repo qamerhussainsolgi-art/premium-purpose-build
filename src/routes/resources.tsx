@@ -1,98 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Download,
-  CheckSquare,
-  LayoutTemplate,
-  Map,
-  Gauge,
-  TrendingUp,
-  ArrowUpRight,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { useState } from "react";
+import { Check, ChevronDown, CheckSquare, Compass } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { FinalCTA } from "@/components/FinalCTA";
 
-type Resource = {
-  slug: string;
-  title: string;
-  description: string;
-  type: string;
-  pages: string;
-  format: string;
-  icon: LucideIcon;
-  featured?: boolean;
-};
+const checklist = [
+  "Clear, one-line answer to 'what do you do?' on the homepage",
+  "Mobile-first layout that reads well on a phone",
+  "Working contact options — WhatsApp, email, phone",
+  "Real business email (not a generic free address)",
+  "Sharp, well-lit product or service photos",
+  "Fast load time — under 3 seconds on mobile data",
+  "No broken links or empty pages",
+  "Clear call-to-action on every page",
+  "About page that explains who's behind the business",
+  "Trust signals — reviews, testimonials, or client logos",
+  "Basic SEO — page titles, meta descriptions, image alt text",
+  "Favicon and social share preview set up properly",
+  "Privacy and contact details easy to find",
+  "Analytics installed so you can see what's working",
+];
 
-const resources: Resource[] = [
+const expectations = [
   {
-    slug: "website-launch-checklist",
-    title: "Website Launch Checklist",
-    description:
-      "Everything to verify before launch — performance, SEO, accessibility, analytics, and the small details that separate amateur launches from professional ones.",
-    type: "Checklist",
-    pages: "42 items",
-    format: "PDF",
-    icon: CheckSquare,
-    featured: true,
+    title: "A short discovery conversation",
+    body: "We start with a call or message exchange to understand your business, your customers, and what success looks like — before any design or code is written.",
   },
   {
-    slug: "landing-page-framework",
-    title: "Landing Page Framework",
-    description:
-      "A structured framework for building landing pages that convert — message hierarchy, section logic, proof placement, and CTA strategy.",
-    type: "Framework",
-    pages: "18 pages",
-    format: "PDF",
-    icon: LayoutTemplate,
+    title: "A clear scope and timeline",
+    body: "You get a written summary of what's included, what isn't, how long it will take, and what's expected from your side. No surprises later.",
   },
   {
-    slug: "website-planning-guide",
-    title: "Website Planning Guide",
-    description:
-      "The questions to answer before a single screen is designed — positioning, audience, content architecture, and success metrics.",
-    type: "Guide",
-    pages: "24 pages",
-    format: "PDF",
-    icon: Map,
+    title: "Regular previews, not surprises",
+    body: "You see the work as it takes shape, with chances to give feedback at the right moments — instead of one big reveal at the end.",
   },
   {
-    slug: "performance-optimization-checklist",
-    title: "Performance Optimization Checklist",
-    description:
-      "A practical checklist for hitting elite Core Web Vitals — image strategy, font loading, JavaScript budgets, and caching done right.",
-    type: "Checklist",
-    pages: "36 items",
-    format: "PDF",
-    icon: Gauge,
+    title: "Honest, direct communication",
+    body: "If something needs more time, I'll tell you. If you're asking for something that won't help your business, I'll say so. You're hiring a partner, not an order-taker.",
   },
   {
-    slug: "conversion-optimization-guide",
-    title: "Conversion Optimization Guide",
-    description:
-      "Frameworks for diagnosing and lifting conversion — funnel analysis, friction audits, copy patterns, and testing discipline.",
-    type: "Guide",
-    pages: "30 pages",
-    format: "PDF",
-    icon: TrendingUp,
+    title: "A handover you can actually use",
+    body: "After launch you get the basics you need — access, simple editing instructions, and answers to your questions — so the site keeps serving you long after the project ends.",
   },
 ];
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Checklists, Guides & Frameworks" },
+      { title: "Resources — Website Readiness Checklist & Working Guide" },
       {
         name: "description",
         content:
-          "Free, practical resources for building, launching, and improving modern websites — checklists, frameworks, and guides drawn from real projects.",
+          "A practical Website Readiness Checklist and a short guide to what to expect when working with Qamer Hussain.",
       },
       { property: "og:title", content: "Resources — Qamer Hussain" },
       {
         property: "og:description",
         content:
-          "Checklists, frameworks, and guides for planning, launching, and optimizing modern websites.",
+          "A Website Readiness Checklist and a short guide to working together.",
       },
     ],
   }),
@@ -100,8 +67,8 @@ export const Route = createFileRoute("/resources")({
 });
 
 function ResourcesPage() {
-  const featured = resources.find((r) => r.featured) ?? resources[0];
-  const rest = resources.filter((r) => r.slug !== featured.slug);
+  const [openChecklist, setOpenChecklist] = useState(true);
+  const [openExpectations, setOpenExpectations] = useState(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -111,94 +78,119 @@ function ResourcesPage() {
           eyebrow="Resources"
           title={
             <>
-              Tools to{" "}
+              Useful, no-nonsense{" "}
               <span className="font-display italic font-normal tracking-[-0.02em] text-foreground/95">
-                ship better.
+                resources.
               </span>
             </>
           }
-          intro="Practical, no-fluff checklists, frameworks, and guides drawn from real client work. Free to download — designed to be used."
+          intro="A short, practical checklist and a clear guide to working together — read inline, no downloads required."
         />
 
-        {/* Featured resource */}
-        <section className="relative mx-auto max-w-7xl px-6 pt-20 lg:pt-28">
-          <article className="group relative overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm sm:p-12 lg:p-16">
-            <div className="pointer-events-none absolute -top-32 right-0 h-80 w-[40%] rounded-full bg-accent/15 blur-3xl" />
-            <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
-              <div>
-                <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                  <span className="rounded-full border border-border bg-surface/60 px-3 py-1 text-foreground">
-                    Featured
-                  </span>
-                  <span>{featured.type}</span>
-                </div>
-                <h2 className="mt-6 text-balance text-[2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl">
-                  {featured.title}
-                </h2>
-                <p className="mt-5 max-w-xl text-base leading-[1.75] text-muted-foreground sm:text-[17px]">
-                  {featured.description}
-                </p>
-                <div className="mt-8 flex flex-wrap items-center gap-5 text-xs text-muted-foreground">
-                  <span>{featured.pages}</span>
-                  <span>{featured.format}</span>
-                  <span>Free download</span>
-                </div>
-                <div className="mt-10">
-                  <button
-                    type="button"
-                    className="group/btn inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all duration-300 cta-glow hover:cta-glow-hover"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download checklist
-                  </button>
+        <section className="relative mx-auto max-w-5xl space-y-10 px-6 pt-20 pb-24 lg:pt-28 lg:pb-32">
+          {/* Checklist */}
+          <article className="overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm sm:p-12">
+            <div className="flex items-start justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-surface text-foreground">
+                  <CheckSquare className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    Checklist
+                  </p>
+                  <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
+                    Website Readiness Checklist
+                  </h2>
                 </div>
               </div>
-              <div className="relative">
-                <div className="grid aspect-[4/5] place-items-center rounded-2xl border border-border bg-gradient-to-br from-surface to-surface-elevated">
-                  <featured.icon className="h-20 w-20 text-foreground/80" />
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        {/* Resource grid */}
-        <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-            {rest.map((r) => (
-              <article
-                key={r.slug}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 p-8 transition-all duration-500 hover:-translate-y-1 hover:border-foreground/20 sm:p-10"
+              <button
+                type="button"
+                onClick={() => setOpenChecklist((v) => !v)}
+                aria-expanded={openChecklist}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20"
               >
-                <div className="flex items-start justify-between gap-6">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl border border-border bg-surface text-foreground">
-                    <r.icon className="h-5 w-5" />
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                    {r.type}
-                  </span>
-                </div>
-                <h3 className="mt-7 text-xl font-semibold leading-[1.2] tracking-[-0.02em] text-foreground sm:text-2xl">
-                  {r.title}
-                </h3>
-                <p className="mt-3 text-sm leading-[1.7] text-muted-foreground">
-                  {r.description}
-                </p>
-                <div className="mt-8 flex items-center justify-between border-t border-border pt-6 text-xs text-muted-foreground">
-                  <span>
-                    {r.pages} · {r.format}
-                  </span>
-                  <button
-                    type="button"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-foreground/70"
+                {openChecklist ? "Hide" : "View checklist"}
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                    openChecklist ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+            </div>
+            <p className="mt-6 max-w-2xl text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
+              A short list to sanity-check your website before launch — or to
+              audit the one you already have.
+            </p>
+            {openChecklist && (
+              <ul className="mt-8 grid grid-cols-1 gap-3 border-t border-border pt-8 sm:grid-cols-2">
+                {checklist.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm leading-relaxed text-foreground/90"
                   >
-                    Download
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </button>
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-foreground" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </article>
+
+          {/* Working together */}
+          <article className="overflow-hidden rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm sm:p-12">
+            <div className="flex items-start justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-surface text-foreground">
+                  <Compass className="h-5 w-5" />
+                </span>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    Guide
+                  </p>
+                  <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
+                    What to expect when working with me
+                  </h2>
                 </div>
-              </article>
-            ))}
-          </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setOpenExpectations((v) => !v)}
+                aria-expanded={openExpectations}
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20"
+              >
+                {openExpectations ? "Hide" : "View guide"}
+                <ChevronDown
+                  className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                    openExpectations ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+            </div>
+            <p className="mt-6 max-w-2xl text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
+              A short, honest summary of how I work — so you know exactly what
+              the experience looks like before you reach out.
+            </p>
+            {openExpectations && (
+              <ol className="mt-8 space-y-6 border-t border-border pt-8">
+                {expectations.map((item, i) => (
+                  <li key={item.title} className="flex gap-5">
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-border bg-surface text-[11px] font-semibold text-foreground">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-base font-semibold tracking-[-0.01em] text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-[1.75] text-muted-foreground">
+                        {item.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </article>
         </section>
 
         <FinalCTA />
