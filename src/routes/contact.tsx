@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
-  Mail,
   Clock,
   CheckCircle2,
   MessagesSquare,
@@ -199,7 +198,7 @@ function ContactPage() {
                       name="goals"
                       rows={2}
                       placeholder="E.g., increase qualified leads, launch a new product, reposition the brand…"
-                      className="mt-2 w-full resize-none rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-foreground/30 focus:outline-none"
+                      className="mt-2 w-full resize-none rounded-lg border border-border bg-background/60 px-4 py-3 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring/40"
                     />
                   </div>
 
@@ -212,7 +211,7 @@ function ContactPage() {
                       required
                       rows={5}
                       placeholder="Tell me about your project, audience, and what success looks like."
-                      className="mt-2 w-full resize-none rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-foreground/30 focus:outline-none"
+                      className="mt-2 w-full resize-none rounded-lg border border-border bg-background/60 px-4 py-3 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring/40"
                     />
                   </div>
 
