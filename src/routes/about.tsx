@@ -63,8 +63,8 @@ const experience = [
 ];
 
 const expertise = [
-  "React & TypeScript", "Next.js / TanStack Start", "Tailwind CSS", "Framer Motion",
-  "Headless CMS", "SEO & Performance", "Conversion Strategy", "Design Systems",
+  "Modern React", "TypeScript", "Tailwind CSS", "Responsive UI",
+  "SEO & Performance", "Conversion Strategy", "Design Systems", "Maintainable Code",
 ];
 
 export const Route = createFileRoute("/about")({
