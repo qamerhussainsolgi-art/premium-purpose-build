@@ -41,9 +41,6 @@ export function Navbar() {
           to="/"
           className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-foreground"
         >
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-foreground text-[11px] font-bold text-background shadow-[0_0_0_1px_oklch(1_0_0_/_0.08),0_8px_24px_-8px_oklch(0.70_0.16_252_/_0.5)]">
-            Q
-          </span>
           <span className="font-display text-base">Qamer Hussain</span>
         </Link>
 

@@ -6,25 +6,28 @@ import projectAgency from "@/assets/project-agency.jpg";
 
 const projects = [
   {
-    slug: "flowstate",
+    slug: "md-industry",
     image: projectSaaS,
-    name: "FlowState",
-    category: "SaaS Startup",
-    outcome: "Designed to streamline onboarding and increase activation.",
+    name: "MD Industry",
+    category: "FMCG Manufacturing",
+    outcome:
+      "A polished digital catalog that builds trust with B2B buyers and distributors.",
   },
   {
-    slug: "finedge-capital",
+    slug: "design-fabrics",
     image: projectFinance,
-    name: "FinEdge Capital",
-    category: "Financial Services",
-    outcome: "Designed to increase trust and improve lead conversion.",
+    name: "Design Fabrics",
+    category: "Wholesale Clothing",
+    outcome:
+      "A storefront-style catalog and landing page giving wholesale buyers a credible first touchpoint.",
   },
   {
-    slug: "studio-meridian",
+    slug: "shaheen-outfitter",
     image: projectAgency,
-    name: "Studio Meridian",
-    category: "Creative Agency",
-    outcome: "Designed to establish authority and attract high-value clients.",
+    name: "Shaheen Outfitter",
+    category: "Apparel & Retail",
+    outcome:
+      "A modern, mobile-first storefront with clear product focus and brand identity.",
   },
 ];
 
@@ -54,8 +57,8 @@ export function SelectedWork() {
           {projects.map((project) => (
             <Link
               key={project.name}
-              to="/work/$slug"
-              params={{ slug: project.slug }}
+              to="/work"
+              hash={project.slug}
               preload="intent"
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:bg-card/80 hover:shadow-[0_0_0_1px_oklch(1_0_0_/_0.06),0_24px_60px_-24px_oklch(0_0_0_/_0.5)]"
             >
