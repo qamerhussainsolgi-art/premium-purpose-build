@@ -47,9 +47,6 @@ export function Footer() {
         <div className="mt-20 grid grid-cols-1 gap-12 border-t border-border pt-12 md:grid-cols-3">
           <div>
             <div className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-foreground">
-              <span className="grid h-8 w-8 place-items-center rounded-md bg-foreground text-[11px] font-bold text-background">
-                Q
-              </span>
               <span className="font-display text-lg">Qamer Hussain</span>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -81,11 +78,11 @@ export function Footer() {
             </p>
             <div className="mt-5 space-y-3 text-sm">
               <a
-                href="mailto:hello@qamerhussain.com"
+                href="mailto:qamerhussainsolgi@gmail.com"
                 className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-foreground/70"
               >
                 <Mail className="h-3.5 w-3.5" />
-                hello@qamerhussain.com
+                qamerhussainsolgi@gmail.com
               </a>
               <p className="text-muted-foreground">
                 Working remotely · Worldwide
