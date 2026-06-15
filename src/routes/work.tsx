@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
@@ -10,31 +9,40 @@ import projectAgency from "@/assets/project-agency.jpg";
 
 const caseStudies = [
   {
-    slug: "flowstate",
+    slug: "md-industry",
     image: projectSaaS,
-    name: "FlowState",
-    industry: "SaaS · Productivity",
-    challenge: "A complex onboarding flow was causing high drop-off before activation.",
-    solution: "Rebuilt the marketing site and onboarding around a single clear value proposition with reduced friction.",
-    outcome: "+38% trial activation, -52% bounce on landing.",
+    name: "MD Industry",
+    industry: "FMCG Manufacturing",
+    challenge:
+      "A growing FMCG manufacturer needed a professional digital presence to build trust with B2B buyers and distributors.",
+    solution:
+      "Built a clean company profile and product showcase site focused on credibility for wholesale inquiries.",
+    outcome:
+      "Delivered a polished digital catalog that gives the brand a stronger first impression with potential business partners.",
   },
   {
-    slug: "finedge-capital",
+    slug: "design-fabrics",
     image: projectFinance,
-    name: "FinEdge Capital",
-    industry: "Financial Services",
-    challenge: "Lead quality was low and the existing site failed to communicate trust to high-value prospects.",
-    solution: "Designed a premium, content-led experience with credibility cues, clear positioning, and a refined inquiry flow.",
-    outcome: "+64% qualified leads, 2.1× consultation bookings.",
+    name: "Design Fabrics",
+    industry: "Wholesale Clothing",
+    challenge:
+      "A Karachi-based wholesale clothing business had no online presence for buyers to review their catalog.",
+    solution:
+      "Designed a storefront-style catalog presentation paired with a trust-focused landing page for wholesale clients.",
+    outcome:
+      "Gave buyers a polished, credible first touchpoint before reaching out directly.",
   },
   {
-    slug: "studio-meridian",
+    slug: "shaheen-outfitter",
     image: projectAgency,
-    name: "Studio Meridian",
-    industry: "Creative Agency",
-    challenge: "Strong work, weak narrative — the site looked dated and didn't reflect the studio's caliber.",
-    solution: "Editorial portfolio architecture, refined typography system, and a project-first storytelling layout.",
-    outcome: "3× inbound project inquiries within 60 days.",
+    name: "Shaheen Outfitter",
+    industry: "Apparel & Retail",
+    challenge:
+      "An apparel brand needed a modern, mobile-first online presence with clear product focus and brand identity.",
+    solution:
+      "Built a retail-focused landing experience with clean navigation and product highlight sections.",
+    outcome:
+      "Gave the brand a professional digital storefront optimized for mobile shoppers.",
   },
 ];
 
@@ -74,9 +82,10 @@ function WorkPage() {
             {caseStudies.map((p, i) => (
               <article
                 key={p.name}
+                id={p.slug}
                 className={`grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16 ${
                   i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
+                } scroll-mt-28`}
               >
                 <div className="overflow-hidden rounded-2xl border border-border bg-card/60">
                   <img
@@ -109,14 +118,6 @@ function WorkPage() {
                       <dd className="mt-1.5 text-sm leading-relaxed text-foreground">{p.outcome}</dd>
                     </div>
                   </dl>
-                  <Link
-                    to="/work/$slug"
-                    params={{ slug: p.slug }}
-                    className="mt-8 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-all duration-300 hover:border-foreground/20 hover:bg-surface-elevated"
-                  >
-                    Read the case study
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </Link>
                 </div>
               </article>
             ))}
