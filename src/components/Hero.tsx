@@ -16,7 +16,7 @@ const trustSignals = [
 ];
 
 const capabilities = [
-  { icon: Zap, label: "Fast Performance", meta: "98 Lighthouse" },
+  { icon: Zap, label: "Fast Performance", meta: "Built for speed" },
   { icon: Smartphone, label: "Responsive Design", meta: "Mobile-first" },
   { icon: Search, label: "SEO Optimized", meta: "Semantic HTML" },
   { icon: MousePointerClick, label: "Conversion UI", meta: "Tested flows" },
@@ -119,7 +119,7 @@ export function Hero() {
               <Circle className="h-2.5 w-2.5 fill-emerald-400/70 text-emerald-400/70" />
               <div className="ml-3 flex-1">
                 <div className="mx-auto w-fit rounded-md bg-background/60 px-3 py-1 text-[11px] text-muted-foreground">
-                  https://yourbrand.com
+                  https://yourbusiness.com
                 </div>
               </div>
             </div>
