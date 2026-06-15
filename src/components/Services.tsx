@@ -25,9 +25,9 @@ const services = [
     description:
       "Production-grade development with clean architecture, fast load times, and an editing setup your team can confidently grow with.",
     deliverables: [
-      "Modern React / TanStack codebase",
+      "Modern React codebase",
       "Performance & Core Web Vitals tuning",
-      "Headless CMS integration",
+      "Tailwind CSS styling",
       "Analytics & SEO foundations",
     ],
     timeline: "3 – 6 weeks",
