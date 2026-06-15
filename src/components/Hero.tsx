@@ -6,6 +6,7 @@ import {
   MousePointerClick,
   Circle,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const trustSignals = [
   "Freelance Developer",
@@ -59,8 +60,9 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
+                preload="intent"
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all duration-300 cta-glow hover:cta-glow-hover"
               >
                 <span
@@ -72,13 +74,14 @@ export function Hero() {
                 />
                 Start Your Project
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="#work"
+              </Link>
+              <Link
+                to="/work"
+                preload="intent"
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3.5 text-sm font-medium text-foreground backdrop-blur transition-all duration-300 hover:border-foreground/20 hover:bg-surface-elevated"
               >
                 View Work
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -102,7 +105,7 @@ export function Hero() {
 
         {/* RIGHT — Product visual */}
         <div
-          className="relative min-h-[540px] animate-hero-rise lg:min-h-[620px]"
+          className="relative hidden min-h-[540px] animate-hero-rise sm:block lg:min-h-[620px]"
           style={{ animationDelay: "120ms" }}
         >
           {/* Soft glow behind */}

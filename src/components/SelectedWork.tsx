@@ -1,22 +1,26 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import projectSaaS from "@/assets/project-saas.jpg";
 import projectFinance from "@/assets/project-finance.jpg";
 import projectAgency from "@/assets/project-agency.jpg";
 
 const projects = [
   {
+    slug: "flowstate",
     image: projectSaaS,
     name: "FlowState",
     category: "SaaS Startup",
     outcome: "Designed to streamline onboarding and increase activation.",
   },
   {
+    slug: "finedge-capital",
     image: projectFinance,
     name: "FinEdge Capital",
     category: "Financial Services",
     outcome: "Designed to increase trust and improve lead conversion.",
   },
   {
+    slug: "studio-meridian",
     image: projectAgency,
     name: "Studio Meridian",
     category: "Creative Agency",
@@ -48,9 +52,11 @@ export function SelectedWork() {
         {/* Project cards grid */}
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((project) => (
-            <a
+            <Link
               key={project.name}
-              href="#"
+              to="/work/$slug"
+              params={{ slug: project.slug }}
+              preload="intent"
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:bg-card/80 hover:shadow-[0_0_0_1px_oklch(1_0_0_/_0.06),0_24px_60px_-24px_oklch(0_0_0_/_0.5)]"
             >
               {/* Image container */}
@@ -86,7 +92,7 @@ export function SelectedWork() {
                   {project.outcome}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
