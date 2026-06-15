@@ -259,7 +259,7 @@ function Field({
         required={required}
         disabled={disabled}
         placeholder={placeholderText}
-        className="mt-2 w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-foreground/30 focus:outline-none disabled:opacity-50"
+        className="mt-2 min-h-11 w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring/40 disabled:opacity-50"
       />
     </div>
   );
@@ -276,7 +276,7 @@ function SelectField({
       <select
         name={name}
         defaultValue=""
-        className="mt-2 w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground focus:border-foreground/30 focus:outline-none"
+        className="mt-2 min-h-11 w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring/40"
       >
         <option value="">Select…</option>
         {options.map((o) => (

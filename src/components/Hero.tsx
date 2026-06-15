@@ -41,7 +41,7 @@ export function Hero() {
             Available for new projects · Q3 2026
           </div>
 
-          <h1 className="mt-8 text-balance text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.035em] text-foreground sm:text-6xl lg:text-[4.4rem] lg:leading-[1.02]">
+          <h1 className="mt-8 text-balance text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.035em] text-foreground sm:text-[2.75rem] md:text-6xl lg:text-[4.4rem] lg:leading-[1.02]">
             Websites that{" "}
             <span className="font-display italic font-normal tracking-[-0.02em] text-foreground/95">
               build trust
