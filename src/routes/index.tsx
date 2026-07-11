@@ -12,6 +12,10 @@ import { FAQ } from "@/components/FAQ";
 
 const homeFaqs = [
   {
+    q: "What does this actually cost?",
+    a: "Landing pages start at Rs. 25,000–45,000 (roughly $150–$400 for international clients). Full redesigns and custom builds run Rs. 60,000–150,000 (roughly $400–$1,200). You get a written, fixed quote before any work begins — the number doesn't move after that, and there are no surprise line items at the end.",
+  },
+  {
     q: "What types of websites do you build?",
     a: "Marketing sites, SaaS product sites, e-commerce stores, landing pages, and bespoke editorial sites — typically for startups, founders, and growing teams who care about craft.",
   },

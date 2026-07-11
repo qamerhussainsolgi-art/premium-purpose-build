@@ -136,7 +136,7 @@ function ContactPage() {
                     {
                       icon: Sparkles,
                       title: "Long-term quality focus",
-                      desc: "Websites built to last — fast, scalable, and easy to grow with you.",
+                      desc: "Websites built to last — fast, maintainable, and easy to grow with you.",
                     },
                   ].map((item) => (
                     <li key={item.title} className="flex gap-4">
