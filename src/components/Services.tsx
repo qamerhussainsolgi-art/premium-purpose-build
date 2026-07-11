@@ -21,7 +21,7 @@ const services = [
     icon: Code2,
     eyebrow: "02 — Build",
     title: "Website Development",
-    focus: "Speed, scalability, and long-term performance.",
+    focus: "Speed, maintainability, and long-term performance.",
     description:
       "Production-grade development with clean architecture, fast load times, and an editing setup your team can confidently grow with.",
     deliverables: [
