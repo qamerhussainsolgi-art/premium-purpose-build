@@ -5,13 +5,13 @@ const reasons = [
     icon: Sparkles,
     title: "Tailored for Your Brand",
     description:
-      "No cookie-cutter templates. Every website is designed around your brand identity, audience, and business goals.",
+      "No template shortcuts. Every website is designed around your brand identity, your audience, and the decisions your buyers actually make.",
   },
   {
     icon: Layers,
     title: "Modern Development Standards",
     description:
-      "Built with clean, scalable code using the latest technologies for long-term reliability and easy maintenance.",
+      "React and TypeScript with a clear component structure your team can extend later without a full rebuild.",
   },
   {
     icon: TrendingUp,
