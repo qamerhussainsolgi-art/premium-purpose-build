@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/sitemap.xml
+Sitemap: https://premium-purpose-build.qamarhusainsolgi.workers.dev/sitemap.xml

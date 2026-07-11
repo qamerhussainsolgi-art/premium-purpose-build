@@ -118,10 +118,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "Person",
-              "@id": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/#person",
+              "@id": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/#person",
               "name": "Qamer Hussain",
               "jobTitle": "Website Designer & Developer",
-              "url": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/",
+              "url": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
               "knowsAbout": [
                 "Web Design",
                 "Web Development",
@@ -137,10 +137,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
             {
               "@type": "ProfessionalService",
-              "@id": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/#service",
+              "@id": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/#service",
               "name": "Qamer Hussain — Web Design & Development",
               "description": "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
-              "url": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/",
+              "url": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
               "priceRange": "$$",
               "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
               "address": {
