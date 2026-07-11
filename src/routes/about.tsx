@@ -1,3 +1,4 @@
+// src/routes/about.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Layers,
@@ -70,10 +71,10 @@ const expertise = [
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Qamer Hussain, Freelance Web Developer" },
-      { name: "description", content: "Freelance web developer focused on building premium, high-performance websites for startups and growing businesses." },
-      { property: "og:title", content: "About — Qamer Hussain" },
-      { property: "og:description", content: "A freelance web developer building premium, conversion-focused websites with a craft-first approach." },
+      { title: "About Qamer Hussain — Web Designer & Developer" },
+      { name: "description", content: "Meet Qamer Hussain, a freelance web developer building premium, conversion-focused websites for startups and growing businesses globally." },
+      { property: "og:title", content: "About Qamer Hussain — Web Designer & Developer" },
+      { property: "og:description", content: "Learn more about Qamer Hussain's experience, design values, and development workflows." },
     ],
   }),
   component: AboutPage,
@@ -98,7 +99,7 @@ function AboutPage() {
         />
 
         <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+          <div className="grid grid-cols-1 gap-16 lg:gap-20">
             <div>
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 Story
@@ -138,7 +139,7 @@ function AboutPage() {
               </ul>
               <div className="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
                 <p className="text-foreground">Based remote · Working worldwide</p>
-                <p className="mt-2">Currently accepting Q3 2026 projects.</p>
+                <p className="mt-2">Currently accepting custom projects.</p>
               </div>
             </aside>
           </div>

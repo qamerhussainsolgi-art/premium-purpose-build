@@ -1,3 +1,4 @@
+// src/routes/services.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -28,10 +29,10 @@ const faqs = [
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Web Design, Development & Landing Pages" },
-      { name: "description", content: "Conversion-focused websites, web development, and high-performance landing pages for startups and growing businesses." },
-      { property: "og:title", content: "Services — Qamer Hussain" },
-      { property: "og:description", content: "Web design, development, and landing pages built for trust, performance, and measurable business growth." },
+      { title: "Web Design & Development Services — Qamer Hussain" },
+      { name: "description", content: "High-performance landing pages, premium website redesigns, and custom React builds designed for measurable business outcomes." },
+      { property: "og:title", content: "Web Design & Development Services — Qamer Hussain" },
+      { property: "og:description", content: "Custom development, redesigns, and high-converting landing pages built on modern stacks." },
     ],
   }),
   component: ServicesPage,

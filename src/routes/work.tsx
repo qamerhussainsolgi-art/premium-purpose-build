@@ -1,58 +1,46 @@
+// src/routes/work.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { FinalCTA } from "@/components/FinalCTA";
-import projectSaaS from "@/assets/project-saas.jpg";
-import projectFinance from "@/assets/project-finance.jpg";
-import projectAgency from "@/assets/project-agency.jpg";
+import gulkariNew from "@/assets/gulkari-new.jpg";
+import gulkariOld from "@/assets/gulkari-old.jpg";
 
 const caseStudies = [
   {
-    slug: "md-industry",
-    image: projectSaaS,
-    name: "MD Industry",
-    industry: "FMCG Manufacturing",
+    slug: "eshaals-gulkari-redesign",
+    image: gulkariNew,
+    name: "Eshaal's Gulkari — Redesign",
+    industry: "Luxury E-commerce",
     challenge:
-      "A growing FMCG manufacturer needed a professional digital presence to build trust with B2B buyers and distributors.",
+      "A premium handcrafted apparel brand required a modern, conversion-focused online shop to replace their existing non-transactional web catalog.",
     solution:
-      "Built a clean company profile and product showcase site focused on credibility for wholesale inquiries.",
+      "Designed and developed a custom React application integrated with Supabase for data management. Implemented a tailored gold and royal dark visual system, custom shopping cart logic, a multi-step product discovery questionnaire, and client-side performance enhancements.",
     outcome:
-      "Delivered a polished digital catalog that gives the brand a stronger first impression with potential business partners.",
+      "Delivered a fast, responsive e-commerce experience featuring clear path-to-purchase flows and a unified inventory presentation.",
   },
   {
-    slug: "design-fabrics",
-    image: projectFinance,
-    name: "Design Fabrics",
-    industry: "Wholesale Clothing",
+    slug: "eshaals-gulkari-original",
+    image: gulkariOld,
+    name: "Eshaal's Gulkari — Original",
+    industry: "Web Catalog",
     challenge:
-      "A Karachi-based wholesale clothing business had no online presence for buyers to review their catalog.",
+      "A handcrafted apparel and textile business needed a simple, professional digital directory to display collections to wholesale and retail buyers without complex shopping carts.",
     solution:
-      "Designed a storefront-style catalog presentation paired with a trust-focused landing page for wholesale clients.",
+      "Created a fast, structured portfolio-style catalog using clean image layouts and direct WhatsApp contact routing for individual product inquiries.",
     outcome:
-      "Gave buyers a polished, credible first touchpoint before reaching out directly.",
-  },
-  {
-    slug: "shaheen-outfitter",
-    image: projectAgency,
-    name: "Shaheen Outfitter",
-    industry: "Apparel & Retail",
-    challenge:
-      "An apparel brand needed a modern, mobile-first online presence with clear product focus and brand identity.",
-    solution:
-      "Built a retail-focused landing experience with clean navigation and product highlight sections.",
-    outcome:
-      "Gave the brand a professional digital storefront optimized for mobile shoppers.",
+      "Established the brand's first professional online interface, paving the way for their subsequent transactional upgrade.",
   },
 ];
 
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Selected Work — Qamer Hussain" },
-      { name: "description", content: "Case studies and websites designed for trust, conversion, and long-term business growth." },
-      { property: "og:title", content: "Selected Work — Qamer Hussain" },
-      { property: "og:description", content: "Case studies and websites designed for trust, conversion, and long-term business growth." },
+      { title: "Selected E-commerce Work — Qamer Hussain" },
+      { name: "description", content: "Case studies detailing the custom React and Supabase rebuild of Eshaal's Gulkari luxury e-commerce catalog." },
+      { property: "og:title", content: "Selected E-commerce Work — Qamer Hussain" },
+      { property: "og:description", content: "Explore e-commerce design and development case studies focused on clear conversion paths." },
     ],
   }),
   component: WorkPage,
@@ -74,7 +62,7 @@ function WorkPage() {
               and conversion.
             </>
           }
-          intro="A closer look at recent projects — the challenge, the approach, and the outcomes. Every project is built around a single goal: measurable business impact."
+          intro="An in-depth look at recent custom projects — the specific challenges, solutions, and concrete outcomes built with performance-focused React and design system practices."
         />
 
         <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
@@ -90,7 +78,7 @@ function WorkPage() {
                 <div className="overflow-hidden rounded-2xl border border-border bg-card/60">
                   <img
                     src={p.image}
-                    alt={`${p.name} — ${p.industry}`}
+                    alt={`${p.name} — ${p.industry} website preview`}
                     loading="lazy"
                     width={1024}
                     height={768}

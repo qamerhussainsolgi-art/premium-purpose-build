@@ -1,40 +1,32 @@
+// src/components/SelectedWork.tsx
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import projectSaaS from "@/assets/project-saas.jpg";
-import projectFinance from "@/assets/project-finance.jpg";
-import projectAgency from "@/assets/project-agency.jpg";
+import gulkariNew from "@/assets/gulkari-new.jpg";
+import gulkariOld from "@/assets/gulkari-old.jpg";
 
 const projects = [
   {
-    slug: "md-industry",
-    image: projectSaaS,
-    name: "MD Industry",
-    category: "FMCG Manufacturing",
+    slug: "eshaals-gulkari-redesign",
+    image: gulkariNew,
+    name: "Eshaal's Gulkari — Redesign",
+    category: "Luxury E-commerce",
     outcome:
-      "A polished digital catalog that builds trust with B2B buyers and distributors.",
+      "A custom-built React and Supabase platform featuring an integrated shopping cart, wishlist, and product discovery system.",
   },
   {
-    slug: "design-fabrics",
-    image: projectFinance,
-    name: "Design Fabrics",
-    category: "Wholesale Clothing",
+    slug: "eshaals-gulkari-original",
+    image: gulkariOld,
+    name: "Eshaal's Gulkari — Original",
+    category: "Catalog Website",
     outcome:
-      "A storefront-style catalog and landing page giving wholesale buyers a credible first touchpoint.",
-  },
-  {
-    slug: "shaheen-outfitter",
-    image: projectAgency,
-    name: "Shaheen Outfitter",
-    category: "Apparel & Retail",
-    outcome:
-      "A modern, mobile-first storefront with clear product focus and brand identity.",
+      "An elegant catalog site that served as the brand's first structured online catalog and communication channel.",
   },
 ];
 
 export function SelectedWork() {
   return (
     <section id="work" className="relative">
-      {/* Soft top gradient for seamless transition from hero */}
+      {/* Soft top gradient for smooth transition from hero */}
       <div className="pointer-events-none absolute inset-x-0 -top-32 h-32 bg-gradient-to-b from-background to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-28 lg:py-40">
@@ -47,13 +39,12 @@ export function SelectedWork() {
             Selected Work
           </h2>
           <p className="mt-5 text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            A curated collection of websites focused on trust, conversion, and
-            exceptional user experience.
+            A focused look at our design and development work, emphasizing conversion, speed, and premium user experience.
           </p>
         </div>
 
         {/* Project cards grid */}
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2 lg:gap-8">
           {projects.map((project) => (
             <Link
               key={project.name}
@@ -63,14 +54,14 @@ export function SelectedWork() {
               className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card/60 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-foreground/20 hover:bg-card/80 hover:shadow-[0_0_0_1px_oklch(1_0_0_/_0.06),0_24px_60px_-24px_oklch(0_0_0_/_0.5)]"
             >
               {/* Image container */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={project.image}
                   alt={`${project.name} — ${project.category} website preview`}
                   loading="lazy"
                   width={1024}
-                  height={768}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  height={640}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                 />
                 {/* Subtle overlay */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60" />

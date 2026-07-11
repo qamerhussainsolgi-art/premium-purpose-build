@@ -1,3 +1,4 @@
+// src/components/Footer.tsx
 import { Link } from "@tanstack/react-router";
 import { Mail, ArrowUpRight } from "lucide-react";
 
@@ -5,7 +6,7 @@ const links = [
   { label: "Home", to: "/" as const },
   { label: "Work", to: "/work" as const },
   { label: "Services", to: "/services" as const },
-  { label: "Insights", to: "/insights" as const },
+  { label: "Blog", to: "/insights" as const },
   { label: "Resources", to: "/resources" as const },
   { label: "About", to: "/about" as const },
   { label: "Contact", to: "/contact" as const },
@@ -25,20 +26,20 @@ export function Footer() {
             Let's talk
           </span>
           <h2 className="mt-5 text-[2.4rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground sm:text-6xl lg:text-7xl">
-            Let's build something{" "}
+            Your next website should be the{" "}
             <span className="font-display italic font-normal tracking-[-0.02em] text-foreground/95">
-              worth remembering.
+              last one you regret hiring for.
             </span>
           </h2>
           <p className="mt-6 max-w-xl text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            Helping businesses create modern digital experiences that inspire
-            trust and drive long-term growth.
+            A strategy-led partner for founders who are done with template sites,
+            ghosting freelancers, and agency theatre.
           </p>
           <Link
             to="/contact"
             className="group mt-10 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all duration-300 cta-glow hover:cta-glow-hover"
           >
-            Start a project
+            Book a Free Strategy Call
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
         </div>
@@ -50,8 +51,8 @@ export function Footer() {
               <span className="font-display text-lg">Qamer Hussain</span>
             </div>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Independent web designer & developer crafting premium,
-              conversion-focused websites for ambitious teams.
+              Strategy-led web designer & developer. Premium, conversion-focused
+              websites for founders who are ready to stop apologising for theirs.
             </p>
           </div>
 
