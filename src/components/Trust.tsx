@@ -23,7 +23,7 @@ const cards = [
     icon: ShieldCheck,
     title: "Long-Term Quality",
     description:
-      "Built with scalability, maintainability, and future growth in mind.",
+      "Built with a clear component structure and versioned dependencies so future edits stay cheap.",
   },
 ];
 
