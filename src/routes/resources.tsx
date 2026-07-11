@@ -1,3 +1,4 @@
+// src/routes/resources.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Check, ChevronDown, CheckSquare, Compass } from "lucide-react";
@@ -49,17 +50,17 @@ const expectations = [
 export const Route = createFileRoute("/resources")({
   head: () => ({
     meta: [
-      { title: "Resources — Website Readiness Checklist & Working Guide" },
+      { title: "Web Checklists & Launch Resources — Qamer Hussain" },
       {
         name: "description",
         content:
-          "A practical Website Readiness Checklist and a short guide to what to expect when working with Qamer Hussain.",
+          "Audit your current website or prepare for a new launch with a practical web-readiness checklist and detailed collaboration guide."
       },
-      { property: "og:title", content: "Resources — Qamer Hussain" },
+      { property: "og:title", content: "Web Checklists & Launch Resources — Qamer Hussain" },
       {
         property: "og:description",
         content:
-          "A Website Readiness Checklist and a short guide to working together.",
+          "Access free checklists and guidelines to evaluate your platform's customer readiness.",
       },
     ],
   }),
@@ -108,7 +109,7 @@ function ResourcesPage() {
                 type="button"
                 onClick={() => setOpenChecklist((v) => !v)}
                 aria-expanded={openChecklist}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20 cursor-pointer"
               >
                 {openChecklist ? "Hide" : "View checklist"}
                 <ChevronDown
@@ -157,7 +158,7 @@ function ResourcesPage() {
                 type="button"
                 onClick={() => setOpenExpectations((v) => !v)}
                 aria-expanded={openExpectations}
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface/60 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-foreground/20 cursor-pointer"
               >
                 {openExpectations ? "Hide" : "View guide"}
                 <ChevronDown

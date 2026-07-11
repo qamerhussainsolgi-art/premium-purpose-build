@@ -1,3 +1,4 @@
+// src/routes/__root.tsx
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -75,30 +76,33 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
+      { name: "google-site-verification", content: "qlB8HDAvC2JwcCF7V4bSV1BgVFraWk2mkjKJ8wjKx2Q" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Qamer Hussain — Website Designer & Developer" },
+      { title: "Qamer Hussain — Web Design & Development" },
       {
         name: "description",
         content:
-          "Premium, conversion-focused websites for startups, SaaS, and e-commerce. Strategy, design, and development by Qamer Hussain.",
+          "Conversion-focused web design & development for startups and e-commerce. Clean, high-performance assets tailored to win customer trust.",
       },
       { name: "author", content: "Qamer Hussain" },
       { name: "theme-color", content: "#1a1a24" },
       { property: "og:site_name", content: "Qamer Hussain" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Qamer Hussain — Website Designer & Developer" },
+      { property: "og:title", content: "Qamer Hussain — Premium Web Design & Development" },
       {
         property: "og:description",
         content:
-          "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
+          "Strategy-led web developer creating custom websites and high-converting landing pages.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Qamer Hussain — Website Designer & Developer" },
+      { name: "twitter:title", content: "Qamer Hussain — Premium Web Design & Development" },
       {
         name: "twitter:description",
-        content: "Premium, conversion-focused websites that build trust and drive growth.",
+        content: "High-performance web assets designed to improve credibility and conversions.",
       },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png" },
     ],
     links: [
       {
@@ -111,19 +115,59 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Qamer Hussain",
-          jobTitle: "Website Designer & Developer",
-          url: "/",
-          sameAs: [],
-          knowsAbout: [
-            "Web Design",
-            "Web Development",
-            "Conversion Optimization",
-            "UX Design",
-            "Performance Optimization",
-          ],
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/#person",
+              "name": "Qamer Hussain",
+              "jobTitle": "Website Designer & Developer",
+              "url": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/",
+              "knowsAbout": [
+                "Web Design",
+                "Web Development",
+                "Conversion Optimization",
+                "UX Design",
+                "Performance Optimization"
+              ],
+              "sameAs": [
+                "https://twitter.com/REPLACE_ME",
+                "https://linkedin.com/in/REPLACE_ME",
+                "https://instagram.com/REPLACE_ME"
+              ]
+            },
+            {
+              "@type": "ProfessionalService",
+              "@id": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/#service",
+              "name": "Qamer Hussain — Web Design & Development",
+              "description": "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
+              "url": "https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/",
+              "priceRange": "$$",
+              "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "PK"
+              },
+              "areaServed": [
+                {
+                  "@type": "Country",
+                  "name": "Pakistan"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Worldwide"
+                }
+              ]
+            }
+          ]
         }),
+      },
+      {
+        type: "text/javascript",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-MQ3Z7R9GXB",
+      },
+      {
+        children:
+          "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MQ3Z7R9GXB');",
       },
     ],
   }),

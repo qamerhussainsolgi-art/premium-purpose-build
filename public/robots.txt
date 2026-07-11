@@ -1,0 +1,7 @@
+# public/robots.txt
+# Placeholder: Update the sitemap URL once a custom domain is connected.
+User-agent: *
+Allow: /
+Disallow:
+
+Sitemap: https://qamer-elevate-engine.qamarhusainsolgi.workers.dev/sitemap.xml

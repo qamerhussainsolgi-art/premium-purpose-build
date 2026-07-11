@@ -1,3 +1,4 @@
+// src/routes/insights.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, Clock } from "lucide-react";
@@ -5,9 +6,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { FinalCTA } from "@/components/FinalCTA";
-import projectSaaS from "@/assets/project-saas.jpg";
-import projectFinance from "@/assets/project-finance.jpg";
-import projectAgency from "@/assets/project-agency.jpg";
+import gulkariNew from "@/assets/gulkari-new.jpg";
+import gulkariOld from "@/assets/gulkari-old.jpg";
 
 type Article = {
   slug: string;
@@ -30,7 +30,7 @@ const articles: Article[] = [
     category: "Small Business",
     readTime: "4 min read",
     date: "Recently published",
-    cover: projectSaaS,
+    cover: gulkariNew,
     feature: true,
     body: [
       "Most small businesses in Pakistan get their first customers through Instagram, Facebook, or WhatsApp. That's a great start — but a social profile is rented space. The algorithm decides who sees your posts, your old content disappears, and serious buyers often hesitate to take a business seriously when there's no website behind the brand.",
@@ -47,7 +47,7 @@ const articles: Article[] = [
     category: "Trust",
     readTime: "4 min read",
     date: "Recently published",
-    cover: projectFinance,
+    cover: gulkariOld,
     body: [
       "When someone lands on your website, they make a decision in seconds: does this feel like a real business, or not? That decision rarely comes from your logo or your colors. It comes from small signals working together.",
       "Clear messaging is the first one. If a visitor can't tell what you do and who you do it for in the first ten seconds, they leave. A trustworthy site says one thing well, instead of trying to say everything at once.",
@@ -63,7 +63,7 @@ const articles: Article[] = [
     category: "Small Business",
     readTime: "5 min read",
     date: "Recently published",
-    cover: projectAgency,
+    cover: gulkariNew,
     body: [
       "The most common mistake is trying to say everything at once. Owners feel they have to list every product, every service, every detail on the homepage. The result is a wall of text no one reads. A good homepage focuses on one message: who you help, what you do for them, and why they should care.",
       "The second mistake is ignoring mobile. In Pakistan, the majority of your visitors are on a phone. If your site is hard to read or tap on a small screen, you're losing most of your traffic — no matter how nice it looks on a laptop.",
@@ -78,17 +78,17 @@ const categories = ["All", "Small Business", "Trust", "Web Design"] as const;
 export const Route = createFileRoute("/insights")({
   head: () => ({
     meta: [
-      { title: "Insights & Perspectives — Qamer Hussain" },
+      { title: "Blog & Web Insights — Qamer Hussain" },
       {
         name: "description",
         content:
-          "Essays on web design, development, conversion, UX, and the craft of building better digital experiences.",
+          "Practical guides on web design, user experience, and conversion optimization to help founders establish online credibility and attract clients.",
       },
-      { property: "og:title", content: "Insights — Qamer Hussain" },
+      { property: "og:title", content: "Blog & Web Insights — Qamer Hussain" },
       {
         property: "og:description",
         content:
-          "Thinking on web design, development, conversion, and the craft of better digital experiences.",
+          "Practical articles on design, conversions, and web standards to assist founders in evaluating website investments.",
       },
     ],
   }),
@@ -107,7 +107,7 @@ function InsightsPage() {
       <Navbar />
       <main>
         <PageHeader
-          eyebrow="Insights"
+          eyebrow="Blog"
           title={
             <>
               Insights &{" "}
@@ -116,7 +116,7 @@ function InsightsPage() {
               </span>
             </>
           }
-          intro="Thoughts on web design, development, conversion optimization, digital products, and the craft of building better online experiences."
+          intro="Thoughts on web design, development, conversion optimization, and the craft of building better online experiences."
         />
 
         {/* Category chips */}
@@ -144,7 +144,7 @@ function InsightsPage() {
             <div className="order-2 overflow-hidden rounded-3xl border border-border bg-card/60 lg:order-1">
               <img
                 src={feature.cover}
-                alt={feature.title}
+                alt={`${feature.title} cover preview`}
                 loading="eager"
                 className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -174,7 +174,7 @@ function InsightsPage() {
                   type="button"
                   onClick={() => toggle(feature.slug)}
                   aria-expanded={!!openSlugs[feature.slug]}
-                  className="group/link inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                  className="group/link inline-flex items-center gap-2 text-sm font-medium text-foreground cursor-pointer"
                 >
                   {openSlugs[feature.slug] ? "Hide article" : "Read article"}
                   <ChevronDown
@@ -203,7 +203,7 @@ function InsightsPage() {
                 <div className="overflow-hidden rounded-2xl border border-border bg-card/60">
                   <img
                     src={a.cover}
-                    alt={a.title}
+                    alt={`${a.title} cover preview`}
                     loading="lazy"
                     className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
@@ -228,7 +228,7 @@ function InsightsPage() {
                     type="button"
                     onClick={() => toggle(a.slug)}
                     aria-expanded={!!openSlugs[a.slug]}
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-foreground/70"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-foreground/70 cursor-pointer"
                   >
                     {openSlugs[a.slug] ? "Hide" : "Read article"}
                     <ChevronDown

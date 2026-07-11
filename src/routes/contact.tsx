@@ -1,5 +1,6 @@
+// src/routes/contact.tsx
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import {
   ArrowRight,
   Clock,
@@ -16,10 +17,10 @@ import { PageHeader } from "@/components/PageHeader";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Start Your Project with Qamer Hussain" },
-      { name: "description", content: "Tell me about your project, goals, and timeline. Responses within 24 hours." },
-      { property: "og:title", content: "Contact — Qamer Hussain" },
-      { property: "og:description", content: "Start a new website, redesign, or landing page project. Responses within 24 hours." },
+      { title: "Contact Qamer Hussain — Custom Web Developer" },
+      { name: "description", content: "Inquire about your custom website design, React build, or landing page project. Personal responses within 24 hours." },
+      { property: "og:title", content: "Contact Qamer Hussain — Custom Web Developer" },
+      { property: "og:description", content: "Reach out directly to discuss website specifications, timelines, and budgets." },
     ],
   }),
   component: ContactPage,
@@ -51,7 +52,7 @@ const budgetsPKR = [
   "Rs 50,000 – 75,000",
   "Rs 75,000+",
 ];
-const budgetsUSD = ["Under $100", "$100 – $300", "$300 – $1000", "$1000+"];
+const budgetsUSD = ["Under $100", "$100 – $300", "$300 – $1,000", "$1,000+"];
 const timelines = ["ASAP", "1–2 months", "3+ months", "Just exploring"];
 
 function ContactPage() {
@@ -60,7 +61,7 @@ function ContactPage() {
   const [error, setError] = useState<string | null>(null);
   const [currency, setCurrency] = useState<"PKR" | "USD">("PKR");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
     const fd = new FormData(e.currentTarget);
@@ -119,8 +120,8 @@ function ContactPage() {
                   {[
                     {
                       icon: Clock,
-                      title: "Response within 24 hours",
-                      desc: "Every inquiry gets a personal reply — never an automated reply.",
+                      title: "Global timezone support",
+                      desc: "Working from Pakistan (UTC+5). No matter where your team is situated across the US, Europe, or Asia, all requests receive personal attention within 24 hours.",
                     },
                     {
                       icon: MessagesSquare,
@@ -156,7 +157,7 @@ function ContactPage() {
                   Currently
                 </p>
                 <p className="mt-3 text-sm text-foreground">
-                  Available for new projects · Q3 2026
+                  Available for new projects
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Limited slots — early conversations preferred.
@@ -210,7 +211,7 @@ function ContactPage() {
                               role="tab"
                               aria-selected={currency === c}
                               onClick={() => setCurrency(c)}
-                              className={`rounded-full px-2.5 py-1 transition-colors ${
+                              className={`rounded-full px-2.5 py-1 transition-colors cursor-pointer ${
                                 currency === c
                                   ? "bg-foreground text-background"
                                   : "text-muted-foreground hover:text-foreground"
@@ -268,7 +269,7 @@ function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="group mt-7 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all duration-300 cta-glow hover:cta-glow-hover disabled:opacity-60"
+                    className="group mt-7 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all duration-300 cta-glow hover:cta-glow-hover disabled:opacity-60 cursor-pointer"
                   >
                     {submitting ? "Sending…" : "Send inquiry"}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
