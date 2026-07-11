@@ -38,7 +38,8 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
             </span>
-            Available for new projects · Q3 2026
+            {/* Evergreen phrasing — no calendar reference to avoid staleness */}
+            Currently accepting new projects
           </div>
 
           <h1 className="mt-8 text-balance text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.035em] text-foreground sm:text-[2.75rem] md:text-6xl lg:text-[4.4rem] lg:leading-[1.02]">
@@ -53,9 +54,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-muted-foreground sm:text-lg">
-            I'm Qamer — a freelance web developer building modern, fast, and
-            scalable websites for startups and online businesses that need a
-            stronger digital presence.
+            I'm Qamer — a freelance web developer building modern, fast
+            websites that load in under two seconds and are built to grow
+            with your business as you add pages, products, and pressure.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
