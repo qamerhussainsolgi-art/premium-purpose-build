@@ -2,7 +2,7 @@ const steps = [
   { n: "01", title: "Discovery", desc: "Understanding goals, audience, and business needs." },
   { n: "02", title: "Strategy", desc: "Creating structure, user flows, and content direction." },
   { n: "03", title: "Design", desc: "Crafting a modern experience focused on trust and clarity." },
-  { n: "04", title: "Development", desc: "Building a fast, scalable, responsive website." },
+  { n: "04", title: "Development", desc: "Building a fast, responsive site in React and TypeScript, ready to extend." },
   { n: "05", title: "Launch", desc: "Testing, optimization, deployment, and ongoing support." },
 ];
 
