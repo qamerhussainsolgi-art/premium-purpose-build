@@ -2,12 +2,15 @@
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import gulkariNew from "@/assets/gulkari-new.jpg";
+import gulkariNewWebp from "@/assets/gulkari-new.webp";
 import gulkariOld from "@/assets/gulkari-old.jpg";
+import gulkariOldWebp from "@/assets/gulkari-old.webp";
 
 const projects = [
   {
     slug: "eshaals-gulkari-redesign",
     image: gulkariNew,
+    imageWebp: gulkariNewWebp,
     name: "Eshaal's Gulkari — Redesign",
     category: "Luxury E-commerce",
     outcome:
@@ -16,6 +19,7 @@ const projects = [
   {
     slug: "eshaals-gulkari-original",
     image: gulkariOld,
+    imageWebp: gulkariOldWebp,
     name: "Eshaal's Gulkari — Original",
     category: "Catalog Website",
     outcome:
@@ -56,14 +60,17 @@ export function SelectedWork() {
             >
               {/* Image container */}
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={`${project.name} — ${project.category} website preview`}
-                  loading="lazy"
-                  width={1024}
-                  height={640}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                />
+                <picture>
+                  <source srcSet={project.imageWebp} type="image/webp" />
+                  <img
+                    src={project.image}
+                    alt={`${project.name} — ${project.category} website preview`}
+                    loading="lazy"
+                    width={719}
+                    height={1259}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </picture>
                 {/* Subtle overlay */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent opacity-60" />
               </div>
