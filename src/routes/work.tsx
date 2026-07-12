@@ -5,24 +5,28 @@ import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
 import { FinalCTA } from "@/components/FinalCTA";
 import gulkariNew from "@/assets/gulkari-new.jpg";
+import gulkariNewWebp from "@/assets/gulkari-new.webp";
 import gulkariOld from "@/assets/gulkari-old.jpg";
+import gulkariOldWebp from "@/assets/gulkari-old.webp";
 
 const caseStudies = [
   {
     slug: "eshaals-gulkari-redesign",
     image: gulkariNew,
+    imageWebp: gulkariNewWebp,
     name: "Eshaal's Gulkari — Redesign",
     industry: "Luxury E-commerce",
     challenge:
       "A premium handcrafted apparel brand required a modern, conversion-focused online shop to replace their existing non-transactional web catalog.",
     solution:
-      "Designed and developed a custom React application integrated with Supabase for data management. Implemented a tailored gold and royal dark visual system, custom shopping cart logic, a multi-step product discovery questionnaire, and client-side performance enhancements.",
+      "Developed a custom React application integrated with Supabase for data management. Implemented a tailored gold and royal dark visual system, custom shopping cart logic, a multi-step product discovery questionnaire, and client-side performance enhancements.",
     outcome:
       "Delivered a fast, responsive e-commerce experience featuring clear path-to-purchase flows and a unified inventory presentation.",
   },
   {
     slug: "eshaals-gulkari-original",
     image: gulkariOld,
+    imageWebp: gulkariOldWebp,
     name: "Eshaal's Gulkari — Original",
     industry: "Web Catalog",
     challenge:
@@ -90,14 +94,17 @@ function WorkPage() {
                 } scroll-mt-28`}
               >
                 <div className="overflow-hidden rounded-2xl border border-border bg-card/60">
-                  <img
-                    src={p.image}
-                    alt={`${p.name} — ${p.industry} website preview`}
-                    loading="lazy"
-                    width={1024}
-                    height={768}
-                    className="h-full w-full object-cover"
-                  />
+                  <picture>
+                    <source srcSet={p.imageWebp} type="image/webp" />
+                    <img
+                      src={p.image}
+                      alt={`${p.name} — ${p.industry} website preview`}
+                      loading="lazy"
+                      width={720}
+                      height={1270}
+                      className="h-full w-full object-cover"
+                    />
+                  </picture>
                 </div>
                 <div className="flex flex-col justify-center">
                   <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
