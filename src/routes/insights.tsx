@@ -13,7 +13,7 @@ type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Web Design" | "Small Business" | "UX" | "Trust" | "Business";
+  category: "Web Development" | "Small Business" | "UX" | "Trust" | "Business";
   readTime: string;
   date: string;
   cover: string;
@@ -73,7 +73,7 @@ const articles: Article[] = [
   },
 ];
 
-const categories = ["All", "Small Business", "Trust", "Web Design"] as const;
+const categories = ["All", "Small Business", "Trust", "Web Development"] as const;
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -82,13 +82,23 @@ export const Route = createFileRoute("/insights")({
       {
         name: "description",
         content:
-          "Practical guides on web design, user experience, and conversion optimization to help founders establish online credibility and attract clients.",
+          "Practical guides on web development, user experience, and conversion optimization to help founders establish online credibility and attract clients.",
       },
       { property: "og:title", content: "Blog & Web Insights — Qamer Hussain" },
       {
         property: "og:description",
         content:
-          "Practical articles on design, conversions, and web standards to assist founders in evaluating website investments.",
+          "Practical articles on development, conversions, and web standards to assist founders in evaluating website investments.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/insights",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/insights",
       },
     ],
   }),
@@ -99,8 +109,7 @@ function InsightsPage() {
   const feature = articles.find((a) => a.feature) ?? articles[0];
   const rest = articles.filter((a) => a.slug !== feature.slug);
   const [openSlugs, setOpenSlugs] = useState<Record<string, boolean>>({});
-  const toggle = (slug: string) =>
-    setOpenSlugs((s) => ({ ...s, [slug]: !s[slug] }));
+  const toggle = (slug: string) => setOpenSlugs((s) => ({ ...s, [slug]: !s[slug] }));
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -116,7 +125,7 @@ function InsightsPage() {
               </span>
             </>
           }
-          intro="Thoughts on web design, development, conversion optimization, and the craft of building better online experiences."
+          intro="Thoughts on web development, conversion optimization, and the craft of building better online experiences."
         />
 
         {/* Category chips */}

@@ -3,19 +3,19 @@ import { Layout, Code2, Target, Check } from "lucide-react";
 const services = [
   {
     icon: Layout,
-    eyebrow: "01 — Design",
-    title: "Website Design",
-    focus: "Brand perception, user trust, and visual hierarchy.",
+    eyebrow: "01 — Plan",
+    title: "Website Structure & Setup",
+    focus: "Page architecture, content structure, and technical foundation.",
     description:
-      "A premium, conversion-aware design system tailored to how your audience actually decides — so your site earns trust the moment it loads.",
+      "A clear site structure and component system built around how your audience actually decides — so your site earns trust the moment it loads.",
     deliverables: [
-      "Brand-aligned visual system",
-      "Wireframes & high-fidelity design",
-      "Responsive design for every breakpoint",
-      "Design QA and handoff",
+      "Site structure & page architecture",
+      "Component-based build plan",
+      "Responsive layout for every breakpoint",
+      "QA and technical handoff",
     ],
     timeline: "2 – 4 weeks",
-    idealFor: "Founders refining their positioning and ready to raise the bar visually.",
+    idealFor: "Founders refining their positioning and ready to raise the bar technically.",
   },
   {
     icon: Code2,
@@ -42,7 +42,7 @@ const services = [
       "Single-purpose pages engineered around one outcome — qualified leads, signups, or bookings — backed by clear messaging and refined UX.",
     deliverables: [
       "Positioning & messaging strategy",
-      "Conversion-optimised page design",
+      "Conversion-optimised page structure",
       "Fast, lightweight build",
       "A/B test-ready structure",
     ],
@@ -64,9 +64,8 @@ export function Services() {
             Built to Help Businesses Grow Online
           </h2>
           <p className="mt-5 text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            From strategy and design to development and launch, every website
-            is crafted to build trust, improve user experience, and generate
-            business results.
+            From strategy and structure to development and launch, every website is built to earn
+            trust, improve user experience, and generate business results.
           </p>
         </div>
 
@@ -89,9 +88,7 @@ export function Services() {
                 <h3 className="mt-6 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm font-medium text-foreground/80">
-                  {service.focus}
-                </p>
+                <p className="mt-3 text-sm font-medium text-foreground/80">{service.focus}</p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-[15px]">
                   {service.description}
                 </p>

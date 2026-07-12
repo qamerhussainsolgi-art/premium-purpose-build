@@ -1,23 +1,21 @@
-import { Palette, Gauge, MessageSquare, ShieldCheck } from "lucide-react";
+import { Blocks, Gauge, MessageSquare, ShieldCheck } from "lucide-react";
 
 const cards = [
   {
-    icon: Palette,
-    title: "Custom Design Approach",
+    icon: Blocks,
+    title: "Custom Build Approach",
     description:
-      "Every project is designed specifically for the business rather than relying on generic templates.",
+      "Every project is built specifically for the business rather than relying on generic templates.",
   },
   {
     icon: Gauge,
     title: "Performance Focused",
-    description:
-      "Fast loading, responsive experiences optimized across devices.",
+    description: "Fast loading, responsive experiences optimized across devices.",
   },
   {
     icon: MessageSquare,
     title: "Clear Communication",
-    description:
-      "Transparent collaboration from planning to launch.",
+    description: "Transparent collaboration from planning to launch.",
   },
   {
     icon: ShieldCheck,
@@ -28,7 +26,7 @@ const cards = [
 ];
 
 const trustBarItems = [
-  "Modern Design",
+  "Modern Stack",
   "Responsive Development",
   "Clean Code",
   "Conversion Focus",
@@ -48,9 +46,8 @@ export function Trust() {
             Built Around Trust, Performance, and Results
           </h2>
           <p className="mt-5 text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            Every project is approached with attention to detail, modern
-            development standards, and a focus on helping businesses establish a
-            stronger online presence.
+            Every project is approached with attention to detail, modern development standards, and
+            a focus on helping businesses establish a stronger online presence.
           </p>
         </div>
 
@@ -59,9 +56,8 @@ export function Trust() {
           {/* Left — Trust statement */}
           <div className="flex items-center">
             <blockquote className="text-xl font-medium leading-[1.5] tracking-[-0.01em] text-foreground sm:text-[1.35rem] lg:text-[1.5rem]">
-              Great websites aren&apos;t just designed. They&apos;re carefully
-              crafted to build confidence, communicate value, and help
-              businesses grow.
+              Great websites aren&apos;t just designed. They&apos;re carefully crafted to build
+              confidence, communicate value, and help businesses grow.
             </blockquote>
           </div>
 

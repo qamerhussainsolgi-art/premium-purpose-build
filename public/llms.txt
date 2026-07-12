@@ -1,0 +1,27 @@
+# Qamer Hussain — Website Developer
+
+> Freelance website developer building premium, conversion-focused websites for startups, SaaS, and e-commerce businesses. Based in Pakistan, working with founders worldwide.
+
+## About
+Qamer Hussain is a strategy-led web developer specializing in fast, high-converting websites built with modern React and TypeScript. Focus areas include landing pages, e-commerce rebuilds, and custom web applications with clean code and SEO-ready structure.
+
+## Services
+- Custom website development
+- Landing page development for conversion
+- E-commerce site builds and redesigns
+- Website performance and SEO optimization
+
+## Pages
+- [Home](https://premium-purpose-build.qamarhusainsolgi.workers.dev/): Overview of services and approach
+- [Work](https://premium-purpose-build.qamarhusainsolgi.workers.dev/work): Case studies including e-commerce rebuilds
+- [Services](https://premium-purpose-build.qamarhusainsolgi.workers.dev/services): Detailed service offerings and pricing approach
+- [About](https://premium-purpose-build.qamarhusainsolgi.workers.dev/about): Background, values, and working style
+- [Insights](https://premium-purpose-build.qamarhusainsolgi.workers.dev/insights): Articles on web development and conversion
+- [Resources](https://premium-purpose-build.qamarhusainsolgi.workers.dev/resources): Free checklists and launch guides
+- [Contact](https://premium-purpose-build.qamarhusainsolgi.workers.dev/contact): Get in touch for a project inquiry
+
+## Contact
+Email: qamarhusainsolgi@gmail.com
+LinkedIn: https://www.linkedin.com/in/qamer-hussain-5496343b3
+Instagram: https://www.instagram.com/qhdigital
+Facebook: https://www.facebook.com/share/14gucVj1gas/

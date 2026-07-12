@@ -1,12 +1,6 @@
 // src/routes/about.tsx
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Layers,
-  Code2,
-  TrendingUp,
-  Smartphone,
-  Compass,
-} from "lucide-react";
+import { Layers, Code2, TrendingUp, Smartphone, Compass } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageHeader";
@@ -18,12 +12,12 @@ const principles = [
     desc: "If a section, sentence, or interaction doesn't earn its place, it doesn't ship. Clean beats clever every time.",
   },
   {
-    title: "Strategy Before Design",
-    desc: "Pixels follow positioning. Every project starts with the question your visitor is really trying to answer.",
+    title: "Strategy Before Build",
+    desc: "Code follows positioning. Every project starts with the question your visitor is really trying to answer.",
   },
   {
     title: "Performance Matters",
-    desc: "Speed, accessibility, and Core Web Vitals are part of design — not an afterthought handed to a developer.",
+    desc: "Speed, accessibility, and Core Web Vitals are part of the build — not an afterthought handed off later.",
   },
   {
     title: "Details Create Trust",
@@ -38,8 +32,8 @@ const principles = [
 const experience = [
   {
     icon: Layers,
-    title: "Web Design",
-    desc: "Premium, brand-aligned interfaces designed around clarity, trust, and conversion.",
+    title: "Custom Web Builds",
+    desc: "Production-grade React sites built from scratch — clean architecture, no bloated templates.",
   },
   {
     icon: Code2,
@@ -54,27 +48,51 @@ const experience = [
   {
     icon: Smartphone,
     title: "Responsive Design",
-    desc: "Pixel-considered experiences across every screen size — phone first, polished everywhere.",
+    desc: "Consistent, tested experiences across every screen size — mobile-first, reliable everywhere.",
   },
   {
     icon: Compass,
-    title: "UI/UX Strategy",
-    desc: "Information architecture and interaction design rooted in how real users decide.",
+    title: "Technical Strategy",
+    desc: "Architecture and build decisions rooted in performance, maintainability, and real user behavior.",
   },
 ];
 
 const expertise = [
-  "Modern React", "TypeScript", "Tailwind CSS", "Responsive UI",
-  "SEO & Performance", "Conversion Strategy", "Design Systems", "Maintainable Code",
+  "Modern React",
+  "TypeScript",
+  "Tailwind CSS",
+  "Responsive UI",
+  "SEO & Performance",
+  "Conversion Strategy",
+  "Component Architecture",
+  "Maintainable Code",
 ];
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Qamer Hussain — Web Designer & Developer" },
-      { name: "description", content: "Meet Qamer Hussain, a freelance web developer building premium, conversion-focused websites for startups and growing businesses globally." },
-      { property: "og:title", content: "About Qamer Hussain — Web Designer & Developer" },
-      { property: "og:description", content: "Learn more about Qamer Hussain's experience, design values, and development workflows." },
+      { title: "About Qamer Hussain — Website Developer" },
+      {
+        name: "description",
+        content:
+          "Meet Qamer Hussain, a freelance web developer building premium, conversion-focused websites for startups and growing businesses globally.",
+      },
+      { property: "og:title", content: "About Qamer Hussain — Website Developer" },
+      {
+        property: "og:description",
+        content:
+          "Learn more about Qamer Hussain's experience, technical values, and development workflows.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/about",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/about",
+      },
     ],
   }),
   component: AboutPage,
@@ -106,19 +124,18 @@ function AboutPage() {
               </span>
               <div className="mt-6 space-y-6 text-base leading-[1.8] text-muted-foreground sm:text-[17px]">
                 <p>
-                  I've spent the last several years building websites for companies
-                  that care about how they're perceived online — from early-stage
-                  SaaS startups to established service businesses.
+                  I've spent the last several years building websites for companies that care about
+                  how they're perceived online — from early-stage SaaS startups to established
+                  service businesses.
                 </p>
                 <p>
-                  My focus is simple: design and build websites that earn trust
-                  instantly, communicate clearly, and convert visitors into
-                  customers. No bloated templates, no over-engineered systems —
-                  just thoughtful, modern web experiences built with intent.
+                  My focus is simple: build websites that earn trust instantly, communicate clearly,
+                  and convert visitors into customers. No bloated templates, no over-engineered
+                  systems — just thoughtful, modern web experiences built with intent.
                 </p>
                 <p>
-                  I work directly with founders and decision-makers. That keeps
-                  the process fast, the feedback clear, and the work honest.
+                  I work directly with founders and decision-makers. That keeps the process fast,
+                  the feedback clear, and the work honest.
                 </p>
               </div>
             </div>
@@ -164,9 +181,7 @@ function AboutPage() {
                   <h3 className="text-base font-semibold tracking-[-0.01em] text-foreground">
                     {p.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -190,21 +205,18 @@ function AboutPage() {
               </div>
               <div className="space-y-6 text-base leading-[1.85] text-muted-foreground sm:text-[17px]">
                 <p>
-                  Great websites aren't measured by how much they contain —
-                  they're measured by how clearly they communicate, how fast
-                  they feel, and how much trust they earn in the first few
-                  seconds.
+                  Great websites aren't measured by how much they contain — they're measured by how
+                  clearly they communicate, how fast they feel, and how much trust they earn in the
+                  first few seconds.
                 </p>
                 <p>
-                  I build around five non-negotiables: simplicity, trust,
-                  performance, user experience, and business outcomes. Every
-                  decision — from typography to motion to copy — is filtered
-                  through those five.
+                  I build around five non-negotiables: simplicity, trust, performance, user
+                  experience, and business outcomes. Every decision — from typography to motion to
+                  copy — is filtered through those five.
                 </p>
                 <p>
-                  Design isn't the surface. It's the strategy that decides what
-                  visitors notice, believe, and do next. That's the work I show
-                  up for every day.
+                  A website isn't just its surface. It's the strategy that decides what visitors
+                  notice, believe, and do next. That's the work I show up for every day.
                 </p>
               </div>
             </div>
@@ -239,12 +251,12 @@ function AboutPage() {
                     <span className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/60 transition-all duration-300 group-hover:border-foreground/15 group-hover:bg-surface-elevated">
                       <e.icon className="h-4 w-4 text-foreground/80" />
                     </span>
-                    <h3 className={`mt-6 font-semibold tracking-[-0.01em] text-foreground ${i === 0 ? "text-xl sm:text-2xl" : "text-base"}`}>
+                    <h3
+                      className={`mt-6 font-semibold tracking-[-0.01em] text-foreground ${i === 0 ? "text-xl sm:text-2xl" : "text-base"}`}
+                    >
                       {e.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {e.desc}
-                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{e.desc}</p>
                   </div>
                 </div>
               ))}

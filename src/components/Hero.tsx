@@ -1,18 +1,11 @@
-import {
-  ArrowRight,
-  Zap,
-  Smartphone,
-  Search,
-  MousePointerClick,
-  Circle,
-} from "lucide-react";
+import { ArrowRight, Zap, Smartphone, Search, MousePointerClick, Circle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 const trustSignals = [
   "Freelance Developer",
   "Fast Delivery",
   "Clean Modern Code",
-  "100% Custom Design",
+  "100% Custom Build",
 ];
 
 const capabilities = [
@@ -54,9 +47,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-muted-foreground sm:text-lg">
-            I'm Qamer — a freelance web developer building modern, fast
-            websites that load in under two seconds and are built to grow
-            with your business as you add pages, products, and pressure.
+            I'm Qamer — a freelance web developer building modern, fast websites that load in under
+            two seconds and are built to grow with your business as you add pages, products, and
+            pressure.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -69,8 +62,7 @@ export function Hero() {
                 <span
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   style={{
-                    background:
-                      "linear-gradient(135deg, oklch(1 0 0 / 0.15), transparent 55%)",
+                    background: "linear-gradient(135deg, oklch(1 0 0 / 0.15), transparent 55%)",
                   }}
                 />
                 Start Your Project
@@ -96,9 +88,7 @@ export function Hero() {
             {trustSignals.map((t, i) => (
               <li key={t} className="flex items-center gap-2">
                 <span className="tracking-wide">{t}</span>
-                {i < trustSignals.length - 1 && (
-                  <span className="h-1 w-1 rounded-full bg-border" />
-                )}
+                {i < trustSignals.length - 1 && <span className="h-1 w-1 rounded-full bg-border" />}
               </li>
             ))}
           </ul>
@@ -145,10 +135,7 @@ export function Hero() {
               </div>
               <div className="mt-6 grid grid-cols-3 gap-3">
                 {[0, 1, 2].map((i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg border border-border bg-surface p-3"
-                  >
+                  <div key={i} className="rounded-lg border border-border bg-surface p-3">
                     <div className="h-1.5 w-8 rounded-full bg-accent/80" />
                     <div className="mt-2 h-2 w-full rounded bg-muted" />
                     <div className="mt-1.5 h-2 w-2/3 rounded bg-muted" />
@@ -188,12 +175,8 @@ export function Hero() {
                     <Icon className="h-4 w-4" />
                   </div>
                   <div className="min-w-0">
-                    <div className="truncate text-xs font-medium text-foreground">
-                      {label}
-                    </div>
-                    <div className="truncate text-[11px] text-muted-foreground">
-                      {meta}
-                    </div>
+                    <div className="truncate text-xs font-medium text-foreground">{label}</div>
+                    <div className="truncate text-[11px] text-muted-foreground">{meta}</div>
                   </div>
                 </div>
               </div>

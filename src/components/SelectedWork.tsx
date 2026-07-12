@@ -39,7 +39,8 @@ export function SelectedWork() {
             Selected Work
           </h2>
           <p className="mt-5 text-base leading-[1.7] text-muted-foreground sm:text-lg">
-            A focused look at our design and development work, emphasizing conversion, speed, and premium user experience.
+            A focused look at our development work, emphasizing conversion, speed, and premium user
+            experience.
           </p>
         </div>
 
