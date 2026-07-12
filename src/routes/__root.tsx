@@ -79,35 +79,85 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "google-site-verification", content: "qlB8HDAvC2JwcCF7V4bSV1BgVFraWk2mkjKJ8wjKx2Q" },
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Qamer Hussain — Web Design & Development" },
+      { title: "Qamer Hussain — Website Developer" },
       {
         name: "description",
         content:
-          "Conversion-focused web design & development for startups and e-commerce. Clean, high-performance assets tailored to win customer trust.",
+          "Conversion-focused website development for startups and e-commerce. Clean, high-performance builds tailored to win customer trust.",
       },
       { name: "author", content: "Qamer Hussain" },
       { name: "theme-color", content: "#1a1a24" },
       { property: "og:site_name", content: "Qamer Hussain" },
       { property: "og:type", content: "website" },
-      { property: "og:title", content: "Qamer Hussain — Premium Web Design & Development" },
+      { property: "og:title", content: "Qamer Hussain — Website Developer" },
       {
         property: "og:description",
         content:
           "Strategy-led web developer creating custom websites and high-converting landing pages.",
       },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Qamer Hussain — Premium Web Design & Development" },
+      { name: "twitter:title", content: "Qamer Hussain — Website Developer" },
       {
         name: "twitter:description",
-        content: "High-performance web assets designed to improve credibility and conversions.",
+        content: "High-performance websites built to improve credibility and conversions.",
       },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
+      },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
+      },
+      {
+        rel: "icon",
+        href: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "192x192",
+        href: "/icon-192.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "512x512",
+        href: "/icon-512.png",
       },
     ],
     scripts: [
@@ -119,46 +169,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             {
               "@type": "Person",
               "@id": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/#person",
-              "name": "Qamer Hussain",
-              "jobTitle": "Website Designer & Developer",
-              "url": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
-              "knowsAbout": [
-                "Web Design",
+              name: "Qamer Hussain",
+              jobTitle: "Website Developer",
+              url: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
+              knowsAbout: [
                 "Web Development",
+                "React",
                 "Conversion Optimization",
-                "UX Design",
-                "Performance Optimization"
+                "Performance Optimization",
+                "SEO",
               ],
-              "sameAs": [
-                "https://twitter.com/REPLACE_ME",
-                "https://linkedin.com/in/REPLACE_ME",
-                "https://instagram.com/REPLACE_ME"
-              ]
+              sameAs: [
+                "https://www.linkedin.com/in/qamer-hussain-5496343b3",
+                "https://www.instagram.com/qhdigital",
+                "https://www.facebook.com/share/14gucVj1gas/",
+              ],
             },
             {
               "@type": "ProfessionalService",
               "@id": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/#service",
-              "name": "Qamer Hussain — Web Design & Development",
-              "description": "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
-              "url": "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
-              "priceRange": "$$",
-              "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
-              "address": {
+              name: "Qamer Hussain — Website Development",
+              description:
+                "Premium, conversion-focused websites for startups, SaaS, and e-commerce.",
+              url: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
+              priceRange: "$$",
+              image:
+                "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/71df5746-2fad-413b-b870-8df6b39858db/id-preview-9d52debc--dbdec541-f302-4f1e-8f50-4284def43411.lovable.app-1781676534595.png",
+              address: {
                 "@type": "PostalAddress",
-                "addressCountry": "PK"
+                addressCountry: "PK",
               },
-              "areaServed": [
+              areaServed: [
                 {
                   "@type": "Country",
-                  "name": "Pakistan"
+                  name: "Pakistan",
                 },
                 {
                   "@type": "AdministrativeArea",
-                  "name": "Worldwide"
-                }
-              ]
-            }
-          ]
+                  name: "Worldwide",
+                },
+              ],
+            },
+          ],
         }),
       },
       {

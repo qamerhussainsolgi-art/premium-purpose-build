@@ -1,14 +1,7 @@
 // src/routes/contact.tsx
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import {
-  ArrowRight,
-  Clock,
-  CheckCircle2,
-  MessagesSquare,
-  Compass,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Clock, CheckCircle2, MessagesSquare, Compass, Sparkles } from "lucide-react";
 import { z } from "zod";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -18,9 +11,26 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Qamer Hussain — Custom Web Developer" },
-      { name: "description", content: "Inquire about your custom website design, React build, or landing page project. Personal responses within 24 hours." },
+      {
+        name: "description",
+        content:
+          "Inquire about your custom website build, React project, or landing page. Get a clear scope, timeline, and pricing — personal responses within 24 hours.",
+      },
       { property: "og:title", content: "Contact Qamer Hussain — Custom Web Developer" },
-      { property: "og:description", content: "Reach out directly to discuss website specifications, timelines, and budgets." },
+      {
+        property: "og:description",
+        content: "Reach out directly to discuss website specifications, timelines, and budgets.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/contact",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/contact",
+      },
     ],
   }),
   component: ContactPage,
@@ -46,12 +56,7 @@ const projectTypes = [
   "Conversion optimization",
   "Not sure yet",
 ];
-const budgetsPKR = [
-  "Under Rs 30,000",
-  "Rs 30,000 – 50,000",
-  "Rs 50,000 – 75,000",
-  "Rs 75,000+",
-];
+const budgetsPKR = ["Under Rs 30,000", "Rs 30,000 – 50,000", "Rs 50,000 – 75,000", "Rs 75,000+"];
 const budgetsUSD = ["Under $100", "$100 – $300", "$300 – $1,000", "$1,000+"];
 const timelines = ["ASAP", "1–2 months", "3+ months", "Just exploring"];
 
@@ -131,7 +136,7 @@ function ContactPage() {
                     {
                       icon: Compass,
                       title: "Collaborative process",
-                      desc: "Strategy, design, and development built around your business — not a template.",
+                      desc: "Strategy, structure, and development built around your business — not a template.",
                     },
                     {
                       icon: Sparkles,
@@ -156,9 +161,7 @@ function ContactPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                   Currently
                 </p>
-                <p className="mt-3 text-sm text-foreground">
-                  Available for new projects
-                </p>
+                <p className="mt-3 text-sm text-foreground">Available for new projects</p>
                 <p className="mt-1 text-xs text-muted-foreground">
                   Limited slots — early conversations preferred.
                 </p>
@@ -176,8 +179,7 @@ function ContactPage() {
                     Thanks — message received.
                   </h2>
                   <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                    I'll review your project details and get back to you personally
-                    within 24 hours.
+                    I'll review your project details and get back to you personally within 24 hours.
                   </p>
                 </div>
               ) : (
@@ -230,7 +232,9 @@ function ContactPage() {
                       >
                         <option value="">Select…</option>
                         {(currency === "PKR" ? budgetsPKR : budgetsUSD).map((o) => (
-                          <option key={o} value={`${currency} ${o}`}>{o}</option>
+                          <option key={o} value={`${currency} ${o}`}>
+                            {o}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -262,9 +266,7 @@ function ContactPage() {
                     />
                   </div>
 
-                  {error && (
-                    <p className="mt-4 text-sm text-destructive">{error}</p>
-                  )}
+                  {error && <p className="mt-4 text-sm text-destructive">{error}</p>}
 
                   <button
                     type="submit"
@@ -290,9 +292,19 @@ function ContactPage() {
 }
 
 function Field({
-  label, name, type = "text", required, disabled, placeholderText,
+  label,
+  name,
+  type = "text",
+  required,
+  disabled,
+  placeholderText,
 }: {
-  label: string; name: string; type?: string; required?: boolean; disabled?: boolean; placeholderText?: string;
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  disabled?: boolean;
+  placeholderText?: string;
 }) {
   return (
     <div>
@@ -311,9 +323,7 @@ function Field({
   );
 }
 
-function SelectField({
-  label, name, options,
-}: { label: string; name: string; options: string[] }) {
+function SelectField({ label, name, options }: { label: string; name: string; options: string[] }) {
   return (
     <div>
       <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -326,7 +336,9 @@ function SelectField({
       >
         <option value="">Select…</option>
         {options.map((o) => (
-          <option key={o} value={o}>{o}</option>
+          <option key={o} value={o}>
+            {o}
+          </option>
         ))}
       </select>
     </div>

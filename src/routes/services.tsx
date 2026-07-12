@@ -13,12 +13,12 @@ const faqs = [
     a: "Most websites ship in 3–6 weeks depending on scope. Landing pages can launch in 1–2 weeks.",
   },
   {
-    q: "Do you work with existing brands or design from scratch?",
-    a: "Both. I can extend your existing brand system or build a tailored visual direction from the ground up.",
+    q: "Do you work with existing brands or build from scratch?",
+    a: "Both. I can extend your existing brand's visual identity into a new build, or start entirely from scratch.",
   },
   {
     q: "What's included in a project?",
-    a: "Strategy, design, development, responsive testing, performance optimization, basic SEO, and a smooth launch.",
+    a: "Strategy, structure, development, responsive testing, performance optimization, basic SEO, and a smooth launch.",
   },
   {
     q: "Do you offer ongoing support?",
@@ -29,10 +29,28 @@ const faqs = [
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Web Design & Development Services — Qamer Hussain" },
-      { name: "description", content: "High-performance landing pages, premium website redesigns, and custom React builds designed for measurable business outcomes." },
-      { property: "og:title", content: "Web Design & Development Services — Qamer Hussain" },
-      { property: "og:description", content: "Custom development, redesigns, and high-converting landing pages built on modern stacks." },
+      { title: "Website Development Services — Qamer Hussain" },
+      {
+        name: "description",
+        content:
+          "High-performance landing pages, premium website redesigns, and custom React builds designed for measurable business outcomes.",
+      },
+      { property: "og:title", content: "Website Development Services — Qamer Hussain" },
+      {
+        property: "og:description",
+        content:
+          "Custom development, redesigns, and high-converting landing pages built on modern stacks.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/services",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/services",
+      },
     ],
   }),
   component: ServicesPage,
@@ -54,7 +72,7 @@ function ServicesPage() {
               , not deliverables.
             </>
           }
-          intro="From positioning and design to development and launch — every engagement is built around the metrics that move your business forward."
+          intro="From positioning and structure to development and launch — every engagement is built around the metrics that move your business forward."
         />
 
         <Services />

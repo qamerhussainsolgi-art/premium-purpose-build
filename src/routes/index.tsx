@@ -25,7 +25,7 @@ const homeFaqs = [
   },
   {
     q: "Do you redesign existing websites?",
-    a: "Yes — and most of my work is redesign. I treat redesigns as positioning, not paint, so we'll start by clarifying what's actually broken before touching the design.",
+    a: "Yes — and most of my work is redesign. I treat redesigns as positioning, not paint, so we'll start by clarifying what's actually broken before touching the build.",
   },
   {
     q: "Do you provide ongoing support after launch?",
@@ -44,14 +44,20 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Modern, fast, conversion-focused websites for startups and e-commerce businesses. Clean code, responsive design, and SEO-ready structure.",
+          "Modern, fast, conversion-focused websites for startups and e-commerce businesses. Clean code, responsive builds, and SEO-ready structure.",
       },
       { property: "og:title", content: "Qamer Hussain — Website Developer" },
       {
         property: "og:description",
-        content:
-          "Websites that build trust, improve conversions, and help businesses grow.",
+        content: "Websites that build trust, improve conversions, and help businesses grow.",
       },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/" },
     ],
   }),
   component: Index,

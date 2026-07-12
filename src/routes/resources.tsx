@@ -27,7 +27,7 @@ const checklist = [
 const expectations = [
   {
     title: "A short discovery conversation",
-    body: "We start with a call or message exchange to understand your business, your customers, and what success looks like — before any design or code is written.",
+    body: "We start with a call or message exchange to understand your business, your customers, and what success looks like — before any planning or code is written.",
   },
   {
     title: "A clear scope and timeline",
@@ -54,13 +54,23 @@ export const Route = createFileRoute("/resources")({
       {
         name: "description",
         content:
-          "Audit your current website or prepare for a new launch with a practical web-readiness checklist and detailed collaboration guide."
+          "Audit your current website or prepare for a new launch with a practical web-readiness checklist and detailed collaboration guide.",
       },
       { property: "og:title", content: "Web Checklists & Launch Resources — Qamer Hussain" },
       {
         property: "og:description",
         content:
           "Access free checklists and guidelines to evaluate your platform's customer readiness.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/resources",
+      },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/resources",
       },
     ],
   }),
@@ -120,8 +130,8 @@ function ResourcesPage() {
               </button>
             </div>
             <p className="mt-6 max-w-2xl text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
-              A short list to sanity-check your website before launch — or to
-              audit the one you already have.
+              A short list to sanity-check your website before launch — or to audit the one you
+              already have.
             </p>
             {openChecklist && (
               <ul className="mt-8 grid grid-cols-1 gap-3 border-t border-border pt-8 sm:grid-cols-2">
@@ -169,8 +179,8 @@ function ResourcesPage() {
               </button>
             </div>
             <p className="mt-6 max-w-2xl text-sm leading-[1.75] text-muted-foreground sm:text-[15px]">
-              A short, honest summary of how I work — so you know exactly what
-              the experience looks like before you reach out.
+              A short, honest summary of how I work — so you know exactly what the experience looks
+              like before you reach out.
             </p>
             {openExpectations && (
               <ol className="mt-8 space-y-6 border-t border-border pt-8">

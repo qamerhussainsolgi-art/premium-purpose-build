@@ -38,9 +38,23 @@ export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
       { title: "Selected E-commerce Work — Qamer Hussain" },
-      { name: "description", content: "Case studies detailing the custom React and Supabase rebuild of Eshaal's Gulkari luxury e-commerce catalog." },
+      {
+        name: "description",
+        content:
+          "Case studies detailing the custom React and Supabase rebuild of Eshaal's Gulkari luxury e-commerce catalog — built for speed, clarity, and conversions.",
+      },
       { property: "og:title", content: "Selected E-commerce Work — Qamer Hussain" },
-      { property: "og:description", content: "Explore e-commerce design and development case studies focused on clear conversion paths." },
+      {
+        property: "og:description",
+        content: "Explore e-commerce development case studies focused on clear conversion paths.",
+      },
+      {
+        property: "og:url",
+        content: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/work",
+      },
+    ],
+    links: [
+      { rel: "canonical", href: "https://premium-purpose-build.qamarhusainsolgi.workers.dev/work" },
     ],
   }),
   component: WorkPage,
@@ -62,7 +76,7 @@ function WorkPage() {
               and conversion.
             </>
           }
-          intro="An in-depth look at recent custom projects — the specific challenges, solutions, and concrete outcomes built with performance-focused React and design system practices."
+          intro="An in-depth look at recent custom projects — the specific challenges, solutions, and concrete outcomes built with performance-focused React and clean component architecture."
         />
 
         <section className="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
@@ -94,16 +108,28 @@ function WorkPage() {
                   </h2>
                   <dl className="mt-8 space-y-5">
                     <div>
-                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Challenge</dt>
-                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground/90">{p.challenge}</dd>
+                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Challenge
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground/90">
+                        {p.challenge}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Solution</dt>
-                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground/90">{p.solution}</dd>
+                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Solution
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground/90">
+                        {p.solution}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Outcome</dt>
-                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">{p.outcome}</dd>
+                      <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        Outcome
+                      </dt>
+                      <dd className="mt-1.5 text-sm leading-relaxed text-foreground">
+                        {p.outcome}
+                      </dd>
                     </div>
                   </dl>
                 </div>
