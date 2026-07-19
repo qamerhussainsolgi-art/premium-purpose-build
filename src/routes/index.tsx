@@ -13,7 +13,7 @@ import { FAQ } from "@/components/FAQ";
 const homeFaqs = [
   {
     q: "What does this actually cost?",
-    a: "Landing pages start at Rs. 25,000–45,000 (roughly $150–$400 for international clients). Full redesigns and custom builds run Rs. 60,000–150,000 (roughly $400–$1,200). You get a written, fixed quote before any work begins — the number doesn't move after that, and there are no surprise line items at the end.",
+    a: "Landing pages start at $250–$450 USD. Full websites (5–10 pages) run $500–$1,200 USD. E-commerce and custom builds range from $1,200–$2,500 USD. You'll get a written, fixed quote before any work begins — the number doesn't move after that, and there are no surprise line items at the end.",
   },
   {
     q: "What types of websites do you build?",
@@ -40,16 +40,17 @@ const homeFaqs = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Qamer Hussain — Website Developer for Startups & E-commerce" },
+      { title: "Qamer Hussain — Website Developer | New Zealand & Worldwide" },
       {
         name: "description",
         content:
-          "Modern, fast, conversion-focused websites for startups and e-commerce businesses. Clean code, responsive builds, and SEO-ready structure.",
+          "Modern, fast, conversion-focused websites for startups and small businesses in New Zealand and international clients worldwide. Clean code, responsive builds, SEO-ready structure.",
       },
       { property: "og:title", content: "Qamer Hussain — Website Developer" },
       {
         property: "og:description",
-        content: "Websites that build trust, improve conversions, and help businesses grow.",
+        content:
+          "Modern, fast websites for small businesses in New Zealand and international clients — built to build trust and grow with you.",
       },
       {
         property: "og:url",

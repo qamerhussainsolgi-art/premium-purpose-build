@@ -56,16 +56,19 @@ const projectTypes = [
   "Conversion optimization",
   "Not sure yet",
 ];
-const budgetsPKR = ["Under Rs 30,000", "Rs 30,000 – 50,000", "Rs 50,000 – 75,000", "Rs 75,000+"];
-const budgetsUSD = ["Under $100", "$100 – $300", "$300 – $1,000", "$1,000+"];
+const budgetsUSD = [
+  "Under $250",
+  "$250 – $500",
+  "$500 – $1,200",
+  "$1,200 – $2,500",
+  "$2,500+",
+];
 const timelines = ["ASAP", "1–2 months", "3+ months", "Just exploring"];
 
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [currency, setCurrency] = useState<"PKR" | "USD">("PKR");
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
@@ -196,48 +199,7 @@ function ContactPage() {
 
                   <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
                     <SelectField label="Project type" name="projectType" options={projectTypes} />
-                    <div>
-                      <div className="flex items-center justify-between gap-2">
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                          Budget ({currency})
-                        </label>
-                        <div
-                          role="tablist"
-                          aria-label="Budget currency"
-                          className="inline-flex rounded-full border border-border bg-background/60 p-0.5 text-[11px] font-medium"
-                        >
-                          {(["PKR", "USD"] as const).map((c) => (
-                            <button
-                              key={c}
-                              type="button"
-                              role="tab"
-                              aria-selected={currency === c}
-                              onClick={() => setCurrency(c)}
-                              className={`rounded-full px-2.5 py-1 transition-colors cursor-pointer ${
-                                currency === c
-                                  ? "bg-foreground text-background"
-                                  : "text-muted-foreground hover:text-foreground"
-                              }`}
-                            >
-                              {c}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                      <select
-                        name="budget"
-                        defaultValue=""
-                        key={currency}
-                        className="mt-2 min-h-11 w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-ring/40"
-                      >
-                        <option value="">Select…</option>
-                        {(currency === "PKR" ? budgetsPKR : budgetsUSD).map((o) => (
-                          <option key={o} value={`${currency} ${o}`}>
-                            {o}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                    <SelectField label="Budget (USD)" name="budget" options={budgetsUSD} />
                     <SelectField label="Timeline" name="timeline" options={timelines} />
                   </div>
 

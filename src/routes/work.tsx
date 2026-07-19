@@ -143,6 +143,16 @@ function WorkPage() {
               </article>
             ))}
           </div>
+
+          <aside className="mt-16 rounded-2xl border border-border bg-card/60 p-6 backdrop-blur-sm sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              More on the way
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-foreground sm:text-lg">
+              Currently building demo projects for New Zealand small businesses — reach out to see
+              examples relevant to your industry.
+            </p>
+          </aside>
         </section>
 
         <FinalCTA />

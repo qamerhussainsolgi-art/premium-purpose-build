@@ -137,6 +137,12 @@ function AboutPage() {
                   I work directly with founders and decision-makers. That keeps the process fast,
                   the feedback clear, and the work honest.
                 </p>
+                <p>
+                  I work async-friendly across time zones, with clear communication and fast
+                  turnaround — ideal for businesses in New Zealand, Australia, and beyond. Most
+                  communication happens over email or WhatsApp, with regular updates so you're
+                  never left wondering where your project stands.
+                </p>
               </div>
             </div>
 

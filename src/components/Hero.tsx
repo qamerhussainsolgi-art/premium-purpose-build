@@ -1,3 +1,4 @@
+import heroBg from "@/assets/hero-bg.mp4.asset.json";
 import { ArrowRight, Zap, Smartphone, Search, MousePointerClick, Circle } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
@@ -17,7 +18,26 @@ const capabilities = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden" style={{ backgroundColor: "#1a1a24" }}>
+      {/* Background video (fallback: solid charcoal above) */}
+      <video
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+        tabIndex={-1}
+      >
+        <source src={heroBg.url} type="video/mp4" />
+      </video>
+      {/* Dark overlay for readability */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundColor: "rgba(26, 26, 36, 0.6)" }}
+      />
       {/* Backgrounds */}
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-50" />
       <div className="pointer-events-none absolute inset-0 ambient-glow" />
@@ -36,20 +56,16 @@ export function Hero() {
           </div>
 
           <h1 className="mt-8 text-balance text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.035em] text-foreground sm:text-[2.75rem] md:text-6xl lg:text-[4.4rem] lg:leading-[1.02]">
-            Websites that{" "}
-            <span className="font-display italic font-normal tracking-[-0.02em] text-foreground/95">
-              build trust
-            </span>
-            ,<br className="hidden sm:block" /> convert visitors, and{" "}
+            Modern websites for growing businesses —{" "}
             <span className="font-display italic font-normal tracking-[-0.02em] bg-gradient-to-r from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              grow brands.
+              built fast, priced fairly.
             </span>
           </h1>
 
           <p className="mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-muted-foreground sm:text-lg">
-            I'm Qamer — a freelance web developer building modern, fast websites that load in under
-            two seconds and are built to grow with your business as you add pages, products, and
-            pressure.
+            I'm Qamer, a freelance web developer working with small businesses and independent
+            brands across New Zealand and internationally. Clean code, fast load times, and
+            websites built to grow with you.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
