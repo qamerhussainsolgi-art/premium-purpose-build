@@ -83,7 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Conversion-focused website development for startups and e-commerce. Clean, high-performance builds tailored to win customer trust.",
+          "Modern, fast, conversion-focused websites for startups and small businesses in New Zealand and international clients worldwide. Clean code, responsive builds, SEO-ready structure.",
       },
       { name: "author", content: "Qamer Hussain" },
       { name: "theme-color", content: "#1a1a24" },
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Strategy-led web developer creating custom websites and high-converting landing pages.",
+          "Modern, fast websites for small businesses in New Zealand and international clients — built to build trust and grow with you.",
       },
       {
         property: "og:url",
@@ -103,7 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Qamer Hussain — Website Developer" },
       {
         name: "twitter:description",
-        content: "High-performance websites built to improve credibility and conversions.",
+        content:
+          "Modern, fast websites for small businesses in New Zealand and international clients.",
       },
       {
         property: "og:image",

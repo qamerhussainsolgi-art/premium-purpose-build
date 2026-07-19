@@ -56,16 +56,19 @@ const projectTypes = [
   "Conversion optimization",
   "Not sure yet",
 ];
-const budgetsPKR = ["Under Rs 30,000", "Rs 30,000 – 50,000", "Rs 50,000 – 75,000", "Rs 75,000+"];
-const budgetsUSD = ["Under $100", "$100 – $300", "$300 – $1,000", "$1,000+"];
+const budgetsUSD = [
+  "Under $250",
+  "$250 – $500",
+  "$500 – $1,200",
+  "$1,200 – $2,500",
+  "$2,500+",
+];
 const timelines = ["ASAP", "1–2 months", "3+ months", "Just exploring"];
 
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [currency, setCurrency] = useState<"PKR" | "USD">("PKR");
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);

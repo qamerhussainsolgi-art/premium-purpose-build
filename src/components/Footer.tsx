@@ -74,12 +74,13 @@ export function Footer() {
               Contact
             </p>
             <div className="mt-5 space-y-3 text-sm">
+              {/* TODO: Confirm qamarhusainsolangi@gmail.com is active; falls back to qamarhusainsolgi@gmail.com if not. */}
               <a
-                href="mailto:qamarhusainsolgi@gmail.com"
+                href="mailto:qamarhusainsolangi@gmail.com"
                 className="inline-flex items-center gap-2 text-foreground transition-colors hover:text-foreground/70"
               >
                 <Mail className="h-3.5 w-3.5" />
-                qamarhusainsolgi@gmail.com
+                qamarhusainsolangi@gmail.com
               </a>
               <p className="text-muted-foreground">Working remotely · Worldwide</p>
               <p className="text-muted-foreground">Response within 24 hours</p>
